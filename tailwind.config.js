@@ -58,6 +58,9 @@ export default {
 
         // Disabled state
         disabled: '#666666'
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(at center, var(--tw-gradient-stops))'
       }
     }
   },
