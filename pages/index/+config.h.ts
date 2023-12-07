@@ -1,4 +1,4 @@
 export default {
-  title: `Ashish's personal space afk.codes`,
-  description: 'Playing tricks with JavaScript @ afk.codes',
+  title: `Ashish's Personal Space | afk.codes`,
+  description: "Playing tricks with web @ afk.codes",
 };
