@@ -1,6 +1,3 @@
-// https://vike.dev/onRenderHtml
-export { onRenderHtml };
-
 import ReactDOMServer from 'react-dom/server';
 import { dangerouslySkipEscape, escapeInject } from 'vike/server';
 import type { OnRenderHtmlAsync } from 'vike/types';
@@ -19,7 +16,6 @@ const onRenderHtml: OnRenderHtmlAsync = async (pageContext): ReturnType<OnRender
   );
 
   // See https://vike.dev/head
-
   const title = pageContext.config.title || 'Vite SSR app';
   const desc = pageContext.config.description || 'App using Vike';
 

@@ -36,9 +36,20 @@ export default {
         activePrimaryButton: '#902731',
 
         // Secondary Button
-        secondaryButton: '#00bcd4',
-        hoverSecondaryButton: '#0088a3',
-        activeSecondaryButton: '#006772',
+        secondaryButton: '#33B786',
+        hoverSecondaryButton: '#1e996d',
+        activeSecondaryButton: '#008254',
+
+        darkButton: '#252525', // Lighter dark button color
+        hoverDarkButton: '#383838', // Hover state for lighter dark button
+        activeDarkButton: '#1f1f1f', // Active state for lighter dark button
+
+        ghostButtonBg: 'transparent', // Ghost button background color
+        ghostButtonBorder: '#ffffff', // Ghost button border color
+        hoverGhostButtonBg: 'rgba(255, 255, 255, 0.1)', // Hover state for ghost button background
+        activeGhostButtonBg: 'rgba(255, 255, 255, 0.2)', // Active state for ghost button background
+        hoverGhostButtonBorder: '#ffffff', // Hover state for ghost button border
+        activeGhostButtonBorder: '#ffffff', // Active state for ghost button border
 
         // Links
         link: '#58a6ff',

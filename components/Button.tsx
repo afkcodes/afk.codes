@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-type ButtonStyleType = 'primary' | 'secondary' | 'icon';
+type ButtonStyleType = 'primary' | 'secondary' | 'icon' | 'dark-primary' | 'ghost';
 type Radius = 'sm' | 'md' | 'lg' | 'xl' | 'full' | 'none';
 
 interface Button {
@@ -15,7 +15,11 @@ const ButtonType: {
   primary: 'bg-primaryButton text-white hover:bg-hoverPrimaryButton active:bg-activePrimaryButton',
   secondary:
     'bg-secondaryButton text-white hover:bg-hoverSecondaryButton active:bg-activeSecondaryButton',
-  icon: ''
+  icon: '',
+  ghost:
+    'bg-ghostButtonBg text-white hover:bg-hoverGhostButtonBg active:accent-activeGhostButtonBg',
+  'dark-primary':
+    'bg-darkButton text-white hover:bg-hoverPrimaryButton active:bg-activePrimaryButton'
 };
 
 const radiusMap: {
@@ -35,7 +39,7 @@ const Button: React.FC<Button> = ({ type = 'primary', text, radius = 'none' }) =
       className={`
       ${ButtonType[type]} 
       ${radiusMap[radius]}
-      px-3 py-2 transition-all duration-300
+      flex items-center px-3 py-2 transition-all duration-300
       `}
     >
       {text}
