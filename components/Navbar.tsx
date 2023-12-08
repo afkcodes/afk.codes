@@ -20,6 +20,9 @@ const Navbar = () => {
           <Button text='Stack' type='ghost' radius='md' />
         </li>
         <li>
+          <Button text='Resume' type='ghost' radius='md' />
+        </li>
+        <li>
           <Button text='Contact' type='ghost' radius='md' />
         </li>
       </ul>
