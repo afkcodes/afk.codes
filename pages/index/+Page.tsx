@@ -1,9 +1,9 @@
-import Button from '../../components/Button';
+import Intro from '../../components/Intro';
 
 function Page() {
   return (
     <div>
-      <Button text='afk.codes' type='dark-primary' radius='sm' />
+      <Intro />
     </div>
   );
 }

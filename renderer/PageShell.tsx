@@ -14,9 +14,11 @@ function PageShell({
   return (
     <React.StrictMode>
       <PageContextProvider pageContext={pageContext}>
-        <div className='px-12 w-full bg-darkBackground text-lightText'>
+        <div className='bg-darkBackground text-lightText'>
           <Navbar />
-          <div className='w-full min-h-screen flex justify-center items-center'>{children}</div>
+          <div className='w-full flex flex-col items-center '>
+            <div className='min-h-screen max-w-[900px] pt-16'>{children}</div>
+          </div>
         </div>
       </PageContextProvider>
     </React.StrictMode>

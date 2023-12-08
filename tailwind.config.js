@@ -10,7 +10,7 @@ export default {
     extend: {
       colors: {
         // Background colors
-        darkBackground: '#1a1a1a',
+        darkBackground: '#0d0d0d',
 
         // Text colors
         lightText: '#ffffff',
@@ -61,6 +61,9 @@ export default {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(at center, var(--tw-gradient-stops))'
+      },
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif']
       }
     }
   },

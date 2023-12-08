@@ -4,7 +4,7 @@ import Button from './Button';
 
 const Navbar = () => {
   return (
-    <nav className='flex justify-between items-center py-3 sticky top-0 bg-darkBackground/10  backdrop-blur-2xl'>
+    <nav className='flex justify-between items-center py-3 sticky top-0 z-10 bg-darkBackground/10  backdrop-blur-2xl px-12'>
       <Link href='/' className='flex justify-center items-center gap-2'>
         <Terminal size={22} color='white' />
         <p className='text-xl font-bold italic cursor-pointer'>afk.codes</p>
