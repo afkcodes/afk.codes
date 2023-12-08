@@ -18,8 +18,7 @@ const ButtonType: {
   icon: '',
   ghost:
     'bg-ghostButtonBg text-white hover:bg-hoverGhostButtonBg active:accent-activeGhostButtonBg',
-  'dark-primary':
-    'bg-darkButton text-white hover:bg-hoverPrimaryButton active:bg-activePrimaryButton'
+  'dark-primary': 'bg-darkButton text-white hover:bg-primaryButton active:bg-hoverPrimaryButton'
 };
 
 const radiusMap: {
