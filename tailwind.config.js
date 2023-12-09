@@ -10,8 +10,9 @@ export default {
     extend: {
       colors: {
         // Background colors
-        darkBackground: '#0d0d0d',
-        darkSecondary: '#1a1a1a',
+        darkBackground: '#000000',
+        darkSecondary: '#0d0d0d',
+        darkTertiary: '#1a1a1a',
 
         // Text colors
         lightText: '#ffffff',
