@@ -17,7 +17,7 @@ const ButtonType: {
     'bg-secondaryButton text-white hover:bg-hoverSecondaryButton active:bg-activeSecondaryButton',
   icon: '',
   ghost:
-    'bg-ghostButtonBg text-white hover:bg-hoverGhostButtonBg active:accent-activeGhostButtonBg',
+    'bg-ghostButtonBg text-white hover:bg-hoverGhostButtonBg active:accent-activeGhostButtonBg hover:text-accentText',
   'dark-primary': 'bg-darkButton text-white hover:bg-primaryButton active:bg-hoverPrimaryButton'
 };
 

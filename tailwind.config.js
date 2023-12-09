@@ -11,12 +11,13 @@ export default {
       colors: {
         // Background colors
         darkBackground: '#0d0d0d',
+        darkSecondary: '#1a1a1a',
 
         // Text colors
         lightText: '#ffffff',
         mediumText: '#cccccc',
         darkText: '#333333',
-        accentText: '#b8c7e0',
+        accentText: '#FF6B81',
 
         // Accent colors
         primaryAccent: '#E74F5B',
