@@ -19,7 +19,7 @@ const Projects = () => {
           icon={<Calendar size={22} />}
         />
         <Project
-          name='Audio_X'
+          name='Audio_x'
           description='A JavaScript Audio library that plays most popular formats.'
           year={2023}
           url='https://github.com/afkcodes/audio_x'

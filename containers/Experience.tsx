@@ -17,7 +17,7 @@ const Experience = () => {
           orgName='Rakuten India'
           orgURL='https://corp.rakuten.co.in/'
           isCurrent={true}
-          stacks={['TS', 'Next.js', 'React-Router', 'TailwindCSS', 'Vite', 'Node.JS']}
+          stacks={['TypeScript', 'Next.js', 'React-Router', 'TailwindCSS', 'Vite', 'Node.JS']}
         />
         <Work
           position='Frontend Engineer'
@@ -28,7 +28,7 @@ const Experience = () => {
           isCurrent={false}
           endMonth='March'
           endYear={2022}
-          stacks={['TS', 'Next.js', 'Redux', 'Chakra UI', 'Node.JS', 'React Native']}
+          stacks={['TypeScript', 'Next.js', 'Redux', 'Chakra UI', 'Node.JS', 'React Native']}
         />
         <Work
           position='Software Engineer - JavaScript Games'
@@ -39,7 +39,7 @@ const Experience = () => {
           isCurrent={false}
           endMonth='March'
           endYear={2021}
-          stacks={['JavaScript', 'Cocos2D JS', 'Bootstrap', 'React', 'ASO']}
+          stacks={['JavaScript', 'Game Closure', 'Cocos2D JS', 'Bootstrap', 'React', 'ASO']}
         />
       </div>
     </section>
