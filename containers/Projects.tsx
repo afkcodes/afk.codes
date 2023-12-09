@@ -36,7 +36,6 @@ const Projects = () => {
           name='Free Dictionary API'
           description='A free dictionary api for the web.'
           year={2023}
-          url='https://github.com/afkcodes/free-dictionary-api'
           icon={<BookText size={22} />}
         />
         <Project
