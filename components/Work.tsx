@@ -36,7 +36,7 @@ const Work: React.FC<Work> = ({
       >
         {orgName}
       </Link>
-      <p className='text-sm'>
+      <p className='text-sm mt-1'>
         {startMonth} {startYear} -{' '}
         {isCurrent ? (
           'Present'
