@@ -8,7 +8,9 @@
     "server": "node --loader ts-node/esm ./server/index.ts",
     "server:dev": "npm run server",
     "server:prod": "cross-env NODE_ENV=production npm run server",
-    "lint": "eslint . --max-warnings 0"
+    "lint": "eslint . --max-warnings 0",
+    "preview": "vite build && wrangler dev",
+    "deploy": "vite build && wrangler publish"
   },
   "dependencies": {
     "@types/compression": "^1.7.2",
@@ -35,6 +37,7 @@
     "typescript": "*",
     "vike": "^0.4.148",
     "vite": "^4.4.9",
+    "wrangler": "^3.19.0",
     "yarn": "^1.22.21"
   },
   "type": "module",
