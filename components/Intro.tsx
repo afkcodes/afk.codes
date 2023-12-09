@@ -1,4 +1,4 @@
-import ashish from '../assets/ashish.jpg';
+import ashish from '../assets/ashish.png';
 import Image from './Image';
 import TextLight from './TextLight';
 
@@ -6,8 +6,13 @@ const Intro = () => {
   return (
     <section className='flex flex-col gap-4'>
       <div className='flex gap-6'>
-        <div className='h-80 w-80 rounded-md overflow-hidden shrink-0'>
-          <Image src={ashish} alt='Ashish picture' loading='lazy' />
+        <div className='h-80 w-80 rounded-md overflow-hidden shrink-0 grayscale'>
+          <Image
+            src={ashish}
+            alt='Ashish picture'
+            loading='lazy'
+            customClass='h-full object-cover scale-105'
+          />
         </div>
         <div>
           <p>

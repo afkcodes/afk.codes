@@ -8,6 +8,7 @@ interface Work {
   startYear: number;
   orgName: string;
   orgURL: string;
+  stacks: string[];
   orgLogoUrl?: string;
   endMonth?: string;
   endYear?: number;
@@ -22,7 +23,8 @@ const Work: React.FC<Work> = ({
   orgURL,
   endMonth,
   endYear,
-  isCurrent
+  isCurrent,
+  stacks
 }) => {
   return (
     <div>
@@ -45,6 +47,13 @@ const Work: React.FC<Work> = ({
             {endMonth} {endYear}
           </Fragment>
         )}
+      </p>
+      <p className='mt-1 text-xs'>
+        {stacks.map((stack, idx) => (
+          <span>
+            {stack} {idx !== stacks.length - 1 ? <>&#8226;</> : ''}{' '}
+          </span>
+        ))}
       </p>
     </div>
   );
