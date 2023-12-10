@@ -1,14 +1,10 @@
-import TextLight from '../components/TextLight';
+import Heading from '../components/Heading';
 import Work from '../components/Work';
 
 const Experience = () => {
   return (
     <section>
-      <div className='mb-10'>
-        <h2>
-          <TextLight customClass='font-bold text-3xl'>Experience</TextLight>
-        </h2>
-      </div>
+      <Heading title='Experience' />
       <div className='flex flex-col gap-8'>
         <Work
           position='Senior Software Engineer - Frontend'

@@ -1,6 +1,7 @@
 import React from 'react';
 import type { PageContext } from 'vike/types';
-import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 import './PageShell.css';
 import { PageContextProvider } from './usePageContext';
 
@@ -14,12 +15,13 @@ function PageShell({
   return (
     <React.StrictMode>
       <PageContextProvider pageContext={pageContext}>
-        <div className='bg-darkBackground text-mediumText'>
-          <Navbar />
+        <main className='bg-darkBackground text-mediumText'>
+          <Header />
           <div className='w-full flex flex-col items-center'>
-            <div className='min-h-screen max-w-[900px] pt-16'>{children}</div>
+            <div className='w-full min-h-screen max-w-[900px] pt-16 pb-8 '>{children}</div>
           </div>
-        </div>
+          <Footer />
+        </main>
       </PageContextProvider>
     </React.StrictMode>
   );
