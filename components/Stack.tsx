@@ -8,7 +8,11 @@ interface Stack {
 }
 const Stack: React.FC<Stack> = ({ name, url, icon }) => {
   return (
-    <Link className='flex gap-3 items-end' href={url} target='_blank'>
+    <Link
+      className='flex gap-3 items-end hover:text-lightText transition-colors duration-200'
+      href={url}
+      target='_blank'
+    >
       <Fragment>{icon}</Fragment>
       <p className='text-sm'>{name}</p>
     </Link>
