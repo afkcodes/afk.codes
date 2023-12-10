@@ -15,7 +15,7 @@ function PageShell({
   return (
     <React.StrictMode>
       <PageContextProvider pageContext={pageContext}>
-        <main className='bg-darkBackground text-mediumText'>
+        <main className='bg-darkBackground text-mediumText selection:bg-hoverPrimaryButton selection:text-lightText '>
           <Header />
           <div className='w-full flex flex-col items-center'>
             <div className='w-full min-h-screen max-w-[900px] pt-16 pb-8 '>{children}</div>
