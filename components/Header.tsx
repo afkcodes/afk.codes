@@ -4,8 +4,8 @@ import Button from './Button';
 
 const Header = () => {
   return (
-    <header>
-      <nav className='flex justify-between items-center py-3 px-12 sticky top-0 z-10 bg-darkSecondary/40 backdrop-blur-2xl shadow-md'>
+    <header className='sticky top-0 z-10 bg-darkSecondary/40 backdrop-blur-2xl shadow-md py-3 '>
+      <nav className='flex w-full justify-between items-center px-12 '>
         <Link href='/' className='flex justify-center items-center gap-2'>
           <LuTerminal size={22} color='white' />
           <p className='text-xl font-bold italic cursor-pointer'>afk.codes</p>
