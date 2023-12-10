@@ -51,7 +51,7 @@ const Work: React.FC<Work> = ({
       <p className='mt-1 text-xs'>
         {stacks.map((stack, idx) => (
           <span key={stack}>
-            {stack} {idx !== stacks.length - 1 ? <>&#8226;</> : ''}{' '}
+            {stack}&nbsp;{idx !== stacks.length - 1 ? <>&#8226;</> : ''}&nbsp;
           </span>
         ))}
       </p>

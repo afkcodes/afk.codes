@@ -1,6 +1,7 @@
 import Intro from '../../components/Intro';
 import Experience from '../../containers/Experience';
 import Projects from '../../containers/Projects';
+import Stacks from '../../containers/Stacks';
 
 function Page() {
   return (
@@ -8,6 +9,7 @@ function Page() {
       <Intro />
       <Experience />
       <Projects />
+      <Stacks />
     </div>
   );
 }

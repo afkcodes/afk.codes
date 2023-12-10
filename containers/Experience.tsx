@@ -39,7 +39,7 @@ const Experience = () => {
           isCurrent={false}
           endMonth='March'
           endYear={2021}
-          stacks={['JavaScript', 'Game Closure', 'Cocos2D JS', 'Bootstrap', 'React', 'ASO']}
+          stacks={['JavaScript', 'Game Closure', 'Cocos2D JS', 'Firebase', 'React', 'ASO']}
         />
       </div>
     </section>
