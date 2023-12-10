@@ -1,5 +1,5 @@
-import { ArrowRight } from 'lucide-react';
 import { ReactElement } from 'react';
+import { BsArrowRightShort } from 'react-icons/bs';
 import { Link } from '../renderer/Link';
 import TextLight from './TextLight';
 
@@ -20,15 +20,14 @@ const Project: React.FC<Project> = ({ name, description, year, url, icon }) => {
           <TextLight customClass='text-lg font-medium'>{name}</TextLight>
         </p>
         <p className='text-sm font-semibold'>{description}</p>
-
         <Link
           href={url}
           className='underline underline-offset-2 hover:text-accentText transition-all duration-300'
           target='_blank'
         >
           {url ? (
-            <div className='flex gap-1 items-center'>
-              Check on Github <ArrowRight size={20} />
+            <div className='flex items-center'>
+              Check on Github <BsArrowRightShort size={20} />
             </div>
           ) : (
             <p>Coming Soon</p>
