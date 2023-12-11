@@ -4,7 +4,7 @@ import Work from '../components/Work';
 const Experience = () => {
   return (
     <section>
-      <Heading title='Experience' />
+      <Heading title='Experience' id='experience' />
       <div className='flex flex-col gap-8'>
         <Work
           position='Senior Software Engineer - Frontend'

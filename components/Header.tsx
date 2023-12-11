@@ -13,19 +13,19 @@ const Header = () => {
         </Link>
         <ul className='flex justify-center items-center gap-6'>
           <li>
-            <Button text='About' type='ghost' radius='md' />
+            <Button text='About' type='ghost' radius='md' href='#intro' behavior='link' />
           </li>
           <li>
-            <Button text='Projects' type='ghost' radius='md' />
+            <Button text='Projects' type='ghost' radius='md' href='#projects' behavior='link' />
           </li>
           <li>
-            <Button text='Stack' type='ghost' radius='md' />
+            <Button text='Stack' type='ghost' radius='md' href='#stacks' behavior='link' />
           </li>
           <li>
-            <Button text='Resume' type='ghost' radius='md' />
+            <Button text='Resume' type='ghost' radius='md' href='' behavior='link' />
           </li>
           <li>
-            <Button text='Contact' type='ghost' radius='md' />
+            <Button text='Contact' type='ghost' radius='md' href='#contact' behavior='link' />
           </li>
         </ul>
       </nav>

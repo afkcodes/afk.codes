@@ -1,3 +1,6 @@
+import { Fragment } from 'react';
+import { Link } from '../renderer/Link';
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type ButtonStyleType = 'primary' | 'secondary' | 'icon' | 'dark-primary' | 'ghost';
 type Radius = 'sm' | 'md' | 'lg' | 'xl' | 'full' | 'none';
@@ -7,6 +10,8 @@ interface Button {
   type?: ButtonStyleType;
   icon?: any;
   radius?: Radius;
+  behavior?: 'link' | 'button';
+  href?: string;
 }
 
 const ButtonType: {
@@ -32,17 +37,38 @@ const radiusMap: {
   xl: 'rounded-xl'
 };
 
-const Button: React.FC<Button> = ({ type = 'primary', text, radius = 'none' }) => {
+const Button: React.FC<Button> = ({
+  type = 'primary',
+  text,
+  radius = 'none',
+  behavior = 'button',
+  href
+}) => {
   return (
-    <button
-      className={`
-      ${ButtonType[type]} 
-      ${radiusMap[radius]}
-      flex items-center px-3 py-2 transition-all duration-300
-      `}
-    >
-      {text}
-    </button>
+    <Fragment>
+      {href && behavior === 'link' ? (
+        <Link
+          href={href}
+          className={`
+          ${ButtonType[type]} 
+          ${radiusMap[radius]}
+          flex items-center px-3 py-2 transition-all duration-300
+        `}
+        >
+          {text}
+        </Link>
+      ) : (
+        <button
+          className={`
+          ${ButtonType[type]} 
+          ${radiusMap[radius]}
+          flex items-center px-3 py-2 transition-all duration-300
+        `}
+        >
+          {text}
+        </button>
+      )}
+    </Fragment>
   );
 };
 

@@ -5,7 +5,7 @@ import Social from './Social';
 const Footer = () => {
   return (
     <footer className='w-full flex flex-col items-center bg-darkSecondary/40 backdrop-blur-2xl shadow-md py-12'>
-      <section className='w-full flex flex-col gap-2 max-w-[900px]'>
+      <section className='w-full flex flex-col gap-2 max-w-[900px]' id='contact'>
         <div className='flex flex-col gap-2'>
           <h2 className='text-xl font-semibold'>Let's connect and geek out about the web stuff!</h2>
           <p className='text-sm font-medium'>
