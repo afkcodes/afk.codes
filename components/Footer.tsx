@@ -34,7 +34,8 @@ const Footer = () => {
             Built with
             <Link
               className='px-2 py-1 mx-2 hover:bg-darkTertiary hover:text-accentText font-medium text-lightText transition-all duration-300 rounded-sm'
-              href='https://www.vike.dev'
+              href='https://vike.dev/'
+              target='_blank'
             >
               Vike
             </Link>
@@ -42,6 +43,7 @@ const Footer = () => {
             <Link
               className='px-2 py-1 mx-2 hover:bg-darkTertiary hover:text-accentText font-medium text-lightText transition-all duration-300 rounded-sm'
               href='https://tailwindcss.com/'
+              target='_blank'
             >
               TailwindCSS
             </Link>

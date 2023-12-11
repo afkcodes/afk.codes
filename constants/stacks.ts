@@ -26,7 +26,7 @@ const stackMap: Array<{ name: string; url: string; icon: IconType }> = [
     icon: SiHtml5
   },
   { name: 'CSS', url: 'https://developer.mozilla.org/en-US/docs/Web/CSS', icon: SiCss3 },
-  { name: 'Tailwind CSS', url: 'https://tailwindcss.com/docs/installation', icon: TbBrandTailwind },
+  { name: 'TailwindCSS', url: 'https://tailwindcss.com/docs/installation', icon: TbBrandTailwind },
   {
     name: 'JavaScript',
     url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
