@@ -28,26 +28,31 @@ const Footer = () => {
             ))}
           </div>
         </div>
-
-        <div className='flex flex-col justify-center items-start mt-12'>
-          <p>
-            Built with
-            <Link
-              className='px-2 py-1 mx-2 hover:bg-darkTertiary hover:text-accentText font-medium text-lightText transition-all duration-300 rounded-sm'
-              href='https://vike.dev/'
-              target='_blank'
-            >
-              Vike
-            </Link>
-            and
-            <Link
-              className='px-2 py-1 mx-2 hover:bg-darkTertiary hover:text-accentText font-medium text-lightText transition-all duration-300 rounded-sm'
-              href='https://tailwindcss.com/'
-              target='_blank'
-            >
-              TailwindCSS
-            </Link>
-          </p>
+      </section>
+      <hr className='h-px w-full my-6 bg-darkTertiary border-0' />
+      <section className='w-full flex flex-col items-center'>
+        <div className='w-full flex flex-col gap-2 max-w-[900px]'>
+          <div className='flex flex-col justify-center items-start gap-1'>
+            <p>
+              Built with
+              <Link
+                className='px-2 py-1 mx-2 hover:bg-darkTertiary hover:text-accentText font-medium text-lightText transition-all duration-300 rounded-sm'
+                href='https://vike.dev/'
+                target='_blank'
+              >
+                Vike
+              </Link>
+              and
+              <Link
+                className='px-2 py-1 mx-2 hover:bg-darkTertiary hover:text-accentText font-medium text-lightText transition-all duration-300 rounded-sm'
+                href='https://tailwindcss.com/'
+                target='_blank'
+              >
+                TailwindCSS
+              </Link>
+            </p>
+            <p className='text-xs'>{new Date().getFullYear()}&nbsp;&#9400; Ashish Kumar</p>
+          </div>
         </div>
       </section>
     </footer>
