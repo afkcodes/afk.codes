@@ -3,8 +3,8 @@ import Work from '../components/Work';
 
 const Experience = () => {
   return (
-    <section>
-      <Heading title='Experience' id='experience' />
+    <section id='experience'>
+      <Heading title='Experience' />
       <div className='flex flex-col gap-8'>
         <Work
           position='Senior Software Engineer - Frontend'

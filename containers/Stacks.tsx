@@ -4,8 +4,8 @@ import { stackMap } from '../constants/stacks';
 
 const Stacks = () => {
   return (
-    <section>
-      <Heading title='Stack' id='stacks' />
+    <section id='stacks' className='scroll-mt-28'>
+      <Heading title='Stack' />
       <div className='grid grid-cols-4 gap-y-8 '>
         {stackMap.map((stack) => {
           return (

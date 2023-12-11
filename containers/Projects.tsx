@@ -4,8 +4,8 @@ import { projectMap } from '../constants/projects';
 
 const Projects = () => {
   return (
-    <section>
-      <Heading title='Projects' id='projects' />
+    <section id='projects' className='scroll-mt-28'>
+      <Heading title='Projects' />
       <div className='flex flex-wrap gap-12'>
         {projectMap.map((project) => {
           return (
