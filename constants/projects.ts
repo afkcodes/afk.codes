@@ -11,19 +11,20 @@ const projectMap: Array<{
   icon: IconType;
 }> = [
   {
-    name: 'Calendar',
-    description: 'A Clean Calendar component built with React and TailwindCSS.',
-    year: 2023,
-    url: 'https://github.com/afkcodes/calendar',
-    icon: PiCalendar
-  },
-  {
     name: 'Audio_x',
     description: 'A JavaScript Audio library that supports most popular formats.',
     year: 2023,
     url: 'https://github.com/afkcodes/audio_x',
     icon: LuHeadphones
   },
+  {
+    name: 'Calendar',
+    description: 'A Clean Calendar component built with React and TailwindCSS.',
+    year: 2023,
+    url: 'https://github.com/afkcodes/calendar',
+    icon: PiCalendar
+  },
+
   {
     name: 'Flutter Phosphor Icons',
     description: 'A Icon library on top of Phosphor Icons for flutter.',
