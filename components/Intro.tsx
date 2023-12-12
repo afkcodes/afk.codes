@@ -4,7 +4,7 @@ import TextLight from './TextLight';
 
 const Intro = () => {
   return (
-    <section className='flex flex-col gap-4 mt-12 md:mt-28' id='intro'>
+    <section className='flex flex-col gap-4 mt-12 md:mt-28 scroll-mt-28' id='intro'>
       <div className='flex flex-col md:flex-row gap-6'>
         <div className='h-80 w-80 rounded-md overflow-hidden shrink-0 grayscale'>
           <Image

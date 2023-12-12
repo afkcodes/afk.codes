@@ -5,12 +5,23 @@ const Link = (props: {
   className?: string;
   children: React.ReactNode;
   target?: '_blank' | 'self' | 'parent' | 'top';
+  onClick?: () => void;
 }) => {
   const pageContext = usePageContext();
   const className = [props.className, pageContext.urlPathname === props.href && 'is-active']
     .filter(Boolean)
     .join(' ');
-  return <a {...props} className={className} />;
+  return (
+    <a
+      onClick={() => {
+        if (props.onClick) {
+          props.onClick();
+        }
+      }}
+      {...props}
+      className={className}
+    />
+  );
 };
 
 export { Link };
