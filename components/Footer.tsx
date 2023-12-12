@@ -9,14 +9,14 @@ const Footer = () => {
         <div className='flex flex-col gap-2'>
           <h2 className='text-xl font-semibold'>Let's connect and geek out about the web stuff!</h2>
           <p className='text-sm font-medium'>
-            Drop me a line at &nbsp;
+            Drop me a line at
             <Link
-              className='px-2 py-1 hover:bg-darkTertiary hover:text-accentText font-medium text-lightText transition-all duration-300 rounded-sm'
+              className='px-2 py-1 mx-1 hover:bg-darkTertiary hover:text-accentText font-medium text-lightText transition-all duration-300 rounded-sm'
               href='mailto:mail.ashish.kmr@protonmail.com'
             >
               mail.ashish.kmr@protonmail.com
             </Link>
-            &nbsp; to start the conversation!
+            to start the conversation!
           </p>
         </div>
         <div className='flex flex-col gap-2'>
@@ -36,7 +36,7 @@ const Footer = () => {
             <p>
               Built with
               <Link
-                className='px-2 py-1 mx-2 hover:bg-darkTertiary hover:text-accentText font-medium text-lightText transition-all duration-300 rounded-sm'
+                className='px-2 py-1 mx-1 hover:bg-darkTertiary hover:text-accentText text-lightText transition-all duration-300 rounded-sm'
                 href='https://vike.dev/'
                 target='_blank'
               >
@@ -44,7 +44,7 @@ const Footer = () => {
               </Link>
               and
               <Link
-                className='px-2 py-1 mx-2 hover:bg-darkTertiary hover:text-accentText font-medium text-lightText transition-all duration-300 rounded-sm'
+                className='px-2 py-1 mx-1 hover:bg-darkTertiary hover:text-accentText text-lightText transition-all duration-300 rounded-sm'
                 href='https://tailwindcss.com/'
                 target='_blank'
               >

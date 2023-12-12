@@ -21,6 +21,9 @@ const Header = () => {
             <Button text='Stack' type='ghost' radius='md' href='/#stacks' behavior='link' />
           </li>
           <li>
+            <Button text='Uses' type='ghost' radius='md' href='/uses' behavior='link' />
+          </li>
+          <li>
             <Button text='Resume' type='ghost' radius='md' href='' behavior='link' />
           </li>
           <li>
