@@ -7,7 +7,7 @@ const socialMap: Array<{ href: string; icon: IconType }> = [
     icon: SiLinkedin
   },
   { href: 'https://github.com/afkcodes', icon: SiGithub },
-  { href: 'https://twitter.com/Ashish_feels', icon: SiX },
+  { href: 'https://twitter.com/afkashish', icon: SiX },
   { href: 'https://open.spotify.com/user/r1atcs1zurfr1ncqyf592iox7', icon: SiSpotify }
 ];
 

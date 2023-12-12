@@ -18,7 +18,7 @@ function PageShell({
         <main className='bg-darkBackground text-mediumText selection:bg-hoverPrimaryButton selection:text-lightText '>
           <Header />
           <div className='w-full flex flex-col items-center'>
-            <div className='w-full max-w-[900px] pt-16 pb-8 '>{children}</div>
+            <div className='w-full md:max-w-[900px] pt-16 pb-8 px-4 md:p-0'>{children}</div>
           </div>
           <Footer />
         </main>

@@ -12,6 +12,7 @@ interface Button {
   radius?: Radius;
   behavior?: 'link' | 'button';
   href?: string;
+  target?: '_blank' | 'self' | 'parent' | 'top';
 }
 
 const ButtonType: {
@@ -42,13 +43,15 @@ const Button: React.FC<Button> = ({
   text,
   radius = 'none',
   behavior = 'button',
-  href
+  href,
+  target
 }) => {
   return (
     <Fragment>
       {href && behavior === 'link' ? (
         <Link
           href={href}
+          target={target}
           className={`
           ${ButtonType[type]} 
           ${radiusMap[radius]}

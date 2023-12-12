@@ -3,7 +3,7 @@ import Button from './Button';
 
 const Header = () => {
   return (
-    <header className='sticky top-[-0.1px] m-0 z-10 bg-darkSecondary/40 backdrop-blur-2xl shadow-md py-3 '>
+    <header className='w-full fixed top-0 m-0 z-10 bg-darkSecondary/40 backdrop-blur-2xl shadow-md py-3 '>
       <nav className='flex w-full justify-between items-center px-12 '>
         <Link href='/' className='flex justify-center items-center gap-2'>
           <p className='text-xl font-bold italic cursor-pointer px-2 py-1 bg-hoverPrimaryButton'>
@@ -24,7 +24,14 @@ const Header = () => {
             <Button text='Uses' type='ghost' radius='md' href='/uses' behavior='link' />
           </li>
           <li>
-            <Button text='Resume' type='ghost' radius='md' href='' behavior='link' />
+            <Button
+              text='Resume'
+              type='ghost'
+              radius='md'
+              href='https://drive.google.com/file/d/1dIOtp_kbChgOIO7saEL5doASLcSmW4PG/view?usp=drive_link'
+              behavior='link'
+              target='_blank'
+            />
           </li>
           <li>
             <Button text='Contact' type='ghost' radius='md' href='/#contact' behavior='link' />

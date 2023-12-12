@@ -6,7 +6,7 @@ const Projects = () => {
   return (
     <section id='projects' className='scroll-mt-28'>
       <Heading title='Projects' />
-      <div className='flex flex-wrap gap-12'>
+      <div className='flex flex-wrap gap-4 md:gap-12 '>
         {projectMap.map((project) => {
           return (
             <Project
