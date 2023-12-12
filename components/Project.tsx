@@ -13,7 +13,7 @@ interface Project {
 
 const Project: React.FC<Project> = ({ name, description, year, url, icon }) => {
   return (
-    <div className='flex justify-start bg-darkTertiary md:bg-transparent md:hover:bg-darkTertiary h-48 w-full md:w-56 rounded-md md:-ml-6 md:p-6 p-4 transition-all ease-in duration-200 cursor-pointer'>
+    <div className='flex justify-start bg-darkTertiary md:bg-transparent md:hover:bg-darkTertiary h- md:h-56 w-full md:w-56 rounded-md md:-ml-6 md:p-6 p-4 transition-all ease-in duration-200 cursor-pointer'>
       <div className='flex flex-col justify-center items-start gap-2'>
         <div>{icon}</div>
         <p>
