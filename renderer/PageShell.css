@@ -5,4 +5,5 @@
 html {
   font-family: 'JetBrains Mono', monospace;
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
 }
