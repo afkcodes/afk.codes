@@ -4,7 +4,7 @@ import Gears from '../../containers/Gears';
 
 const Page = () => {
   return (
-    <section>
+    <section className='mt-28'>
       <div>
         <Heading
           title='My Essential Tools'
