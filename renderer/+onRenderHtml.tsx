@@ -27,6 +27,14 @@ const onRenderHtml: OnRenderHtmlAsync = async (pageContext): ReturnType<OnRender
     <html lang="en">
       <head>
         <meta charset="UTF-8" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@afkashish" />
+        <meta name="twitter:creator" content="@afkashish" />
+        <meta property="og:title" content="${title}">
+        <meta property="og:site_name" content="${title}">
+        <meta property="og:url" content=https://www.afk.codes/>
+        <meta property="og:description" content="${desc}">
+        <meta property="og:image" content="https://avatars.githubusercontent.com/u/17390257?v=4">
         <link rel="icon" type="image/svg+xml" href=${favicon} />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
