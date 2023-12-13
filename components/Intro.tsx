@@ -1,4 +1,4 @@
-import ashish from '../assets/ashish.png';
+import ashish from '../assets/ashish.webp';
 import Image from './Image';
 import TextLight from './TextLight';
 
@@ -10,8 +10,10 @@ const Intro = () => {
           <Image
             src={ashish}
             alt='Ashish picture'
-            loading='lazy'
+            loading='eager'
             customClass='h-full object-cover scale-105'
+            height={320}
+            width={320}
           />
         </div>
         <div>

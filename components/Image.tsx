@@ -7,9 +7,18 @@ interface Image {
   alt: string;
   loading?: 'lazy' | 'eager';
   customClass?: string;
+  height?: number | string;
+  width?: number | string;
 }
 
-const Image: React.FC<Image> = ({ src, alt, loading = 'lazy', customClass = '' }) => {
+const Image: React.FC<Image> = ({
+  src,
+  alt,
+  loading = 'lazy',
+  customClass = '',
+  height,
+  width
+}) => {
   return (
     <Fragment>
       <img
@@ -17,6 +26,8 @@ const Image: React.FC<Image> = ({ src, alt, loading = 'lazy', customClass = '' }
         alt={alt}
         loading={loading}
         className={`${customClass ? customClass : 'h-full w-full'}`}
+        height={height}
+        width={width}
       />
     </Fragment>
   );
