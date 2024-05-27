@@ -7,10 +7,10 @@ const Intro = () => {
       <div className='flex flex-col md:flex-row gap-6'>
         <div className='h-80 w-80 rounded-md overflow-hidden shrink-0 grayscale'>
           <Image
-            src='https://ik.imagekit.io/1uvbazlmc/IMG_8564-1.webp?updatedAt=1716828063614'
+            src='https://ik.imagekit.io/1uvbazlmc/IMG_8564-1.webp?tr=w-320,h-320'
             alt='Ashish picture'
             loading='eager'
-            customClass='h-full object-cover scale-105'
+            customClass='h-full object-contain'
             height={320}
             width={320}
           />
