@@ -18,7 +18,7 @@ const Gear: React.FC<Gear> = ({ items, header }) => {
 
       <ul className='flex flex-col gap-1 list-disc list-inside mt-4'>
         {items.map((item) => (
-          <li>
+          <li key={item.name}>
             <Link
               href={item.url}
               target='_blank'
