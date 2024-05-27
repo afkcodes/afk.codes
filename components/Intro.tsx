@@ -1,4 +1,3 @@
-import ashish from '../assets/ashish.webp';
 import Image from './Image';
 import TextLight from './TextLight';
 
@@ -8,7 +7,7 @@ const Intro = () => {
       <div className='flex flex-col md:flex-row gap-6'>
         <div className='h-80 w-80 rounded-md overflow-hidden shrink-0 grayscale'>
           <Image
-            src={ashish}
+            src='https://ik.imagekit.io/1uvbazlmc/IMG_8564-1.webp?updatedAt=1716828063614'
             alt='Ashish picture'
             loading='eager'
             customClass='h-full object-cover scale-105'
