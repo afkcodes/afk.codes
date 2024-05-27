@@ -11,7 +11,7 @@ const Footer = () => {
           <p className='text-sm font-medium'>
             Drop me a line at
             <Link
-              className='px-2 py-1 mx-1 hover:bg-darkTertiary hover:text-accentText font-medium text-lightText transition-all duration-300 rounded-sm'
+              className='px-2 py-1 mx-1 underline hover:bg-darkTertiary hover:text-accentText font-medium text-lightText transition-all duration-300 rounded-sm'
               href='mailto:mail.ashish.kmr@protonmail.com'
             >
               mail.ashish.kmr@protonmail.com
