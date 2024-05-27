@@ -6,7 +6,7 @@ const Gears = ({ gears }: { gears: GearType }) => {
   return (
     <Fragment>
       {gears.map((gear) => (
-        <div className='mb-10'>
+        <div className='mb-10' key={gear.header}>
           <Gear items={gear.items} header={gear.header} />
         </div>
       ))}
