@@ -143,12 +143,20 @@ const gearsMap: Gear = [
         url: 'https://us.soundcore.com/products/motion-x600-a3130011'
       },
       {
+        name: 'Soundcore Motion 300',
+        url: 'https://us.soundcore.com/products/motion-300-speaker-a3135011'
+      },
+      {
         name: 'Mi Smart Speaker',
         url: 'https://www.flipkart.com/mi-smart-speaker-google-assistant/p/itmc7434534b8b84'
       },
       {
         name: 'KZ - ZEX',
         url: 'https://www.headphonezone.in/products/kz-zex?_pos=1&_sid=a59a207c5&_ss=r&variant=40942009909436'
+      },
+      {
+        name: 'KZ - Ling Long',
+        url: 'https://www.headphonezone.in/products/kz-ling-long'
       }
     ]
   }
