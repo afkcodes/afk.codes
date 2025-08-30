@@ -1,9 +1,14 @@
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
-import { ReactLenis } from "lenis/react";
 import { Partytown } from "@qwik.dev/partytown/react";
-import { WebVitals } from "../components/WebVitals";
+import { lazy, Suspense } from "react";
+import { LazyLenis } from "../components/LazyLenis";
 
 import appCss from "../styles.css?url";
+
+// Lazy load WebVitals to reduce main bundle
+const WebVitals = lazy(() => 
+  import("../components/WebVitals").then(module => ({ default: module.WebVitals }))
+);
 
 export const Route = createRootRoute({
 	head: () => ({
@@ -135,12 +140,22 @@ export const Route = createRootRoute({
 				crossOrigin: "anonymous",
 			},
 			{
+				rel: "preconnect",
+				href: "https://www.googletagmanager.com",
+			},
+			{
 				rel: "dns-prefetch",
 				href: "https://ik.imagekit.io",
 			},
 			{
 				rel: "dns-prefetch",
 				href: "https://ghchart.rshah.org",
+			},
+			{
+				rel: "preload",
+				href: "https://ik.imagekit.io/1uvbazlmc/IMG_8564-1.webp?tr=w-160,h-160,q-80,f-webp",
+				as: "image",
+				type: "image/webp",
 			},
 			{
 				rel: "preload",
@@ -220,7 +235,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			<head>
 				<HeadContent />
 				<Partytown 
-					debug={true}
+					debug={false}
 					forward={["dataLayer.push", "gtag", "gtag.config", "gtag.event"]}
 				/>
 				<script
@@ -234,20 +249,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 				<link rel="preload" href={appCss} as="style" />
 			</head>
 			<body>
-				<ReactLenis
-					root
-					options={{
-						duration: 1.2,
-						autoRaf: true,
-						anchors: true,
-						smoothWheel: true,
-						syncTouch: true,
-						touchMultiplier: 2,
-					}}
-				>
+				<LazyLenis>
 					{children}
-				</ReactLenis>
-				<WebVitals />
+				</LazyLenis>
+				<Suspense fallback={null}>
+					<WebVitals />
+				</Suspense>
 				<Scripts />
 			</body>
 		</html>

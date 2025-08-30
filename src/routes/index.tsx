@@ -1,11 +1,28 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { lazy, Suspense } from "react";
 import {
-	ContactSection,
-	ExperienceSection,
 	Header,
 	Hero,
-	ProjectsSection,
 } from "../components/sections";
+
+// Lazy load all sections below the fold for optimal initial loading
+const ExperienceSection = lazy(() => 
+	import("../components/sections/ExperienceSection").then(module => ({ 
+		default: module.ExperienceSection 
+	}))
+);
+
+const ProjectsSection = lazy(() => 
+	import("../components/sections/ProjectsSection").then(module => ({ 
+		default: module.ProjectsSection 
+	}))
+);
+
+const ContactSection = lazy(() => 
+	import("../components/sections/ContactSection").then(module => ({ 
+		default: module.ContactSection 
+	}))
+);
 
 export const Route = createFileRoute("/")({
 	head: () => ({
@@ -62,9 +79,27 @@ function Portfolio() {
 		<div className="min-h-screen bg-black text-white font-['JetBrains_Mono']">
 			<Header />
 			<Hero />
-			<ExperienceSection />
-			<ProjectsSection />
-			<ContactSection />
+			<Suspense fallback={
+				<div className="flex items-center justify-center py-20">
+					<div className="text-zinc-400 text-sm">Loading experience...</div>
+				</div>
+			}>
+				<ExperienceSection />
+			</Suspense>
+			<Suspense fallback={
+				<div className="flex items-center justify-center py-20">
+					<div className="text-zinc-400 text-sm">Loading projects...</div>
+				</div>
+			}>
+				<ProjectsSection />
+			</Suspense>
+			<Suspense fallback={
+				<div className="flex items-center justify-center py-20">
+					<div className="text-zinc-400 text-sm">Loading contact section...</div>
+				</div>
+			}>
+				<ContactSection />
+			</Suspense>
 		</div>
 	);
 }

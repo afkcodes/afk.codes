@@ -81,6 +81,7 @@ export function Hero() {
 									className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-300"
 									loading="eager"
 									decoding="async"
+									fetchPriority="high"
 								/>
 							</div>
 						</div>
