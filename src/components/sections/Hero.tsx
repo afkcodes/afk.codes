@@ -5,10 +5,10 @@ export function Hero() {
 	return (
 		<section
 			id="about"
-			className="px-6 pt-16 pb-10 max-w-3xl xl:max-w-5xl 2xl:max-w-6xl mx-auto"
+			className="px-4 sm:px-6 pt-8 sm:pt-16 pb-8 sm:pb-10 max-w-3xl xl:max-w-5xl 2xl:max-w-6xl mx-auto"
 		>
-			<div className="space-y-8">
-				<div className="inline-flex items-center gap-3 text-sm text-zinc-400 group cursor-default">
+			<div className="space-y-6 sm:space-y-8">
+				<div className="inline-flex items-center gap-3 text-xs sm:text-sm text-zinc-300 group cursor-default">
 					<div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50" />
 					<span className="group-hover:text-zinc-200 transition-colors duration-300 font-medium tracking-tight">
 						Available for opportunities
@@ -16,27 +16,27 @@ export function Hero() {
 				</div>
 
 				{/* Professional Photo & Intro Section */}
-				<div className="flex flex-col sm:flex-row items-start gap-8">
-					<div className="flex-1 space-y-6">
-						<div className="space-y-3">
-							<h1 className="text-3xl sm:text-4xl font-light tracking-tighter bg-gradient-to-r from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent leading-[1.1] font-['JetBrains_Mono']">
+				<div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-8">
+					<div className="flex-1 space-y-4 sm:space-y-6 order-2 sm:order-1">
+						<div className="space-y-2 sm:space-y-3">
+							<h1 className="text-2xl sm:text-3xl lg:text-4xl font-light tracking-tighter bg-gradient-to-r from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent leading-[1.1] font-['JetBrains_Mono']">
 								Ashish Kumar
 							</h1>
-							<p className="text-lg sm:text-xl text-zinc-300 font-light tracking-tight">
+							<p className="text-base sm:text-lg lg:text-xl text-zinc-300 font-light tracking-tight">
 								Senior Frontend Engineer - Design Systems
 							</p>
 						</div>
 
-						<p className="text-base text-zinc-400 leading-relaxed max-w-xl font-['Geist'] tracking-tight">
+						<p className="text-base text-zinc-300 leading-relaxed max-w-xl font-['Geist'] tracking-tight">
 							Hey 👋 I'm a developer, an explorer, a music buff, and a home
 							cook. Currently building design systems at&nbsp;
-							<span className="text-zinc-300 font-medium">Allica Bank</span>.
+							<span className="text-zinc-200 font-medium">Allica Bank</span>.
 							Started in 2019 with JavaScript games.
 							<br />
 							<br />
 							When not coding, I'm grooving to 90s Bollywood or cooking.
-							<span className="flex items-center gap-2 mt-3 text-sm text-zinc-500">
-								<MapPin size={16} className="text-zinc-400" />
+							<span className="flex items-center gap-2 mt-3 text-sm text-zinc-300">
+								<MapPin size={16} className="text-zinc-300" />
 								Bokaro, Jharkhand, India
 							</span>
 						</p>
@@ -47,9 +47,15 @@ export function Hero() {
 						<div className="relative group">
 							<div className="w-32 h-32 sm:w-40 sm:h-40 rounded-lg overflow-hidden shadow-lg shadow-black/20 group-hover:shadow-xl group-hover:shadow-black/30 transition-all duration-300">
 								<img
-									src="https://ik.imagekit.io/1uvbazlmc/IMG_8564-1.webp?tr=w-320,h-320"
+									src="https://ik.imagekit.io/1uvbazlmc/IMG_8564-1.webp?tr=w-160,h-160,q-80,f-webp"
+									srcSet="https://ik.imagekit.io/1uvbazlmc/IMG_8564-1.webp?tr=w-128,h-128,q-80,f-webp 128w, https://ik.imagekit.io/1uvbazlmc/IMG_8564-1.webp?tr=w-160,h-160,q-80,f-webp 160w, https://ik.imagekit.io/1uvbazlmc/IMG_8564-1.webp?tr=w-320,h-320,q-80,f-webp 320w"
+									sizes="(max-width: 640px) 128px, 160px"
 									alt="Ashish Kumar - Senior Frontend Engineer"
+									width="160"
+									height="160"
 									className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-300"
+									loading="eager"
+									decoding="async"
 								/>
 							</div>
 						</div>
@@ -73,7 +79,7 @@ export function Hero() {
 					<a
 						href="/ashish_resume.pdf"
 						download="Ashish_Kumar_Resume.pdf"
-						className="inline-flex items-center gap-2 text-zinc-300 hover:text-white transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-zinc-900/50 font-medium tracking-tight font-['Geist'] text-sm"
+						className="inline-flex items-center gap-2 text-zinc-200 hover:text-white transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-zinc-900/50 font-medium tracking-tight font-['Geist'] text-sm"
 					>
 						Download CV
 					</a>
@@ -81,7 +87,7 @@ export function Hero() {
 
 				{/* Quick Skills Preview */}
 				<div className="border-t border-zinc-800/50 pt-6">
-					<p className="text-sm text-zinc-500 tracking-tight font-['Geist'] mb-3">
+					<p className="text-sm text-zinc-300 tracking-tight font-['Geist'] mb-3">
 						Specialized in
 					</p>
 					<div className="flex flex-wrap gap-2">

@@ -221,7 +221,7 @@ function RouteComponent() {
 						<h1 className="text-3xl sm:text-4xl font-light tracking-tighter bg-gradient-to-r from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent leading-[1.1] font-['JetBrains_Mono']">
 							Uses
 						</h1>
-						<p className="text-base text-zinc-400 leading-relaxed max-w-xl font-['Geist'] tracking-tight">
+						<p className="text-base text-zinc-300 leading-relaxed max-w-xl font-['Geist'] tracking-tight">
 							Here's a list of tools, apps, and gear I use daily to build
 							software and stay productive.
 						</p>
@@ -243,12 +243,12 @@ function RouteComponent() {
 											rel="noopener noreferrer"
 											className="group flex items-center justify-between py-3 hover:text-zinc-300 transition-colors duration-200"
 										>
-											<span className="text-sm text-zinc-400 group-hover:text-zinc-200 font-['Geist']">
+											<span className="text-sm text-zinc-300 group-hover:text-zinc-200 font-['Geist']">
 												{item.name}
 											</span>
 											<ExternalLink
 												size={14}
-												className="text-zinc-600 group-hover:text-zinc-400 transition-colors duration-200"
+												className="text-zinc-400 group-hover:text-zinc-300 transition-colors duration-200"
 											/>
 										</a>
 									))}

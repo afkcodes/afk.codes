@@ -1,18 +1,28 @@
-// Google Analytics utility functions
+// Google Analytics utility functions with Partytown support
 declare global {
 	interface Window {
 		gtag?: (...args: unknown[]) => void;
+		dataLayer?: unknown[];
+	}
+}
+
+// Simplified helper for Partytown
+function safeGtag(...args: unknown[]) {
+	if (typeof window !== "undefined" && window.gtag) {
+		try {
+			window.gtag(...args);
+		} catch (error) {
+			console.warn("Analytics error:", error);
+		}
 	}
 }
 
 // Track page views
 export function trackPageView(url: string, title?: string) {
-	if (typeof window !== "undefined" && window.gtag) {
-		window.gtag("config", "G-00ZDLV4JQ0", {
-			page_location: url,
-			page_title: title || document.title,
-		});
-	}
+	safeGtag("config", "G-00ZDLV4JQ0", {
+		page_location: url,
+		page_title: title || document.title,
+	});
 }
 
 // Track custom events
@@ -22,13 +32,11 @@ export function trackEvent(
 	label?: string,
 	value?: number,
 ) {
-	if (typeof window !== "undefined" && window.gtag) {
-		window.gtag("event", action, {
-			event_category: category,
-			event_label: label,
-			value: value,
-		});
-	}
+	safeGtag("event", action, {
+		event_category: category,
+		event_label: label,
+		value: value,
+	});
 }
 
 // Track CV downloads

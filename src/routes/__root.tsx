@@ -1,5 +1,6 @@
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
 import { ReactLenis } from "lenis/react";
+import { Partytown } from "@qwik.dev/partytown/react";
 import { WebVitals } from "../components/WebVitals";
 
 import appCss from "../styles.css?url";
@@ -111,7 +112,7 @@ export const Route = createRootRoute({
 				content: "#000000",
 			},
 			{
-				name: "apple-mobile-web-app-capable",
+				name: "mobile-web-app-capable",
 				content: "yes",
 			},
 			{
@@ -134,6 +135,23 @@ export const Route = createRootRoute({
 				crossOrigin: "anonymous",
 			},
 			{
+				rel: "dns-prefetch",
+				href: "https://ik.imagekit.io",
+			},
+			{
+				rel: "dns-prefetch",
+				href: "https://ghchart.rshah.org",
+			},
+			{
+				rel: "preload",
+				href: "https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap",
+				as: "style",
+			},
+			{
+				rel: "stylesheet",
+				href: "https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap",
+			},
+			{
 				rel: "canonical",
 				href: "https://afk.codes",
 			},
@@ -146,7 +164,7 @@ export const Route = createRootRoute({
 				rel: "icon",
 				type: "image/png",
 				sizes: "32x32",
-				href: "/favicon.svgg",
+				href: "/favicon.svg",
 			},
 			{
 				rel: "icon",
@@ -168,20 +186,6 @@ export const Route = createRootRoute({
 				href: "https://api.github.com",
 			},
 		],
-		scripts: [
-			{
-				src: "https://www.googletagmanager.com/gtag/js?id=G-00ZDLV4JQ0",
-				async: true,
-			},
-			{
-				children: `
-					window.dataLayer = window.dataLayer || [];
-					function gtag(){dataLayer.push(arguments);}
-					gtag('js', new Date());
-					gtag('config', 'G-00ZDLV4JQ0');
-				`,
-			},
-		],
 	}),
 
 	shellComponent: RootDocument,
@@ -195,7 +199,7 @@ export const Route = createRootRoute({
 						Page Not Found
 					</h2>
 				</div>
-				<p className="text-zinc-400 leading-relaxed font-['Geist'] tracking-tight">
+				<p className="text-zinc-300 leading-relaxed font-['Geist'] tracking-tight">
 					The page you're looking for doesn't exist. It might have been moved or
 					deleted.
 				</p>
@@ -215,6 +219,18 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 		<html lang="en">
 			<head>
 				<HeadContent />
+				<Partytown 
+					debug={true}
+					forward={["dataLayer.push", "gtag", "gtag.config", "gtag.event"]}
+				/>
+				<script
+					type="text/partytown"
+					src="https://www.googletagmanager.com/gtag/js?id=G-00ZDLV4JQ0"
+				/>
+				<script
+					type="text/partytown"
+					src="/gtag.js"
+				/>
 				<link rel="preload" href={appCss} as="style" />
 			</head>
 			<body>

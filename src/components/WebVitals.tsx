@@ -4,22 +4,18 @@ import type { Metric } from "web-vitals";
 declare global {
 	interface Window {
 		gtag?: (...args: unknown[]) => void;
+		dataLayer?: unknown[];
 	}
 }
 
 export function WebVitals() {
 	useEffect(() => {
-		const script = document.createElement("script");
-		script.src =
-			"https://unpkg.com/web-vitals@4/dist/web-vitals.attribution.js";
-		script.async = true;
-		document.head.appendChild(script);
-
-		script.onload = () => {
-			import("web-vitals").then(
-				({ onCLS, onFID, onFCP, onLCP, onTTFB, onINP }) => {
-					function sendToGoogleAnalytics(metric: Metric) {
-						// Send to Google Analytics G-00ZDLV4JQ0
+		// Only load web-vitals dynamically via import
+		import("web-vitals").then(
+			({ onCLS, onFID, onFCP, onLCP, onTTFB, onINP }) => {
+				function sendToGoogleAnalytics(metric: Metric) {
+					// Send to Google Analytics G-00ZDLV4JQ0 via Partytown
+					try {
 						if (window.gtag) {
 							window.gtag("event", metric.name, {
 								metric_id: metric.id,
@@ -34,25 +30,22 @@ export function WebVitals() {
 								},
 							});
 						}
-
-						// Log to console for development
-						console.log("Web Vital:", metric);
+					} catch (error) {
+						console.warn("Web Vitals analytics error:", error);
 					}
+				}
 
-					// Measure Core Web Vitals
-					onCLS(sendToGoogleAnalytics);
-					onFID(sendToGoogleAnalytics);
-					onFCP(sendToGoogleAnalytics);
-					onLCP(sendToGoogleAnalytics);
-					onTTFB(sendToGoogleAnalytics);
-					onINP(sendToGoogleAnalytics);
-				},
-			);
-		};
-
-		return () => {
-			document.head.removeChild(script);
-		};
+				// Measure Core Web Vitals
+				onCLS(sendToGoogleAnalytics);
+				onFID(sendToGoogleAnalytics);
+				onFCP(sendToGoogleAnalytics);
+				onLCP(sendToGoogleAnalytics);
+				onTTFB(sendToGoogleAnalytics);
+				onINP(sendToGoogleAnalytics);
+			},
+		).catch((error) => {
+			console.error("Failed to load web-vitals:", error);
+		});
 	}, []);
 
 	return null;
