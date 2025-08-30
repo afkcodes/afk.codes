@@ -1,19 +1,44 @@
 import { MapPin } from "lucide-react";
+// import { useEffect, useState } from "react";
 import { skills } from "../../data/portfolio";
+// import { getCurrentStatus, type Status } from "../../lib/status";
 
 export function Hero() {
+	// Status functionality - disabled for now
+	// const [currentStatus, setCurrentStatus] = useState<Status | null>(null);
+
+	// useEffect(() => {
+	// 	// Set initial status
+	// 	setCurrentStatus(getCurrentStatus());
+	// 	
+	// 	// Update status periodically (every 5 minutes)
+	// 	const statusInterval = setInterval(() => {
+	// 		setCurrentStatus(getCurrentStatus());
+	// 	}, 5 * 60 * 1000);
+
+	// 	return () => clearInterval(statusInterval);
+	// }, []);
 	return (
 		<section
 			id="about"
 			className="px-4 sm:px-6 pt-8 sm:pt-16 pb-8 sm:pb-10 max-w-3xl xl:max-w-5xl 2xl:max-w-6xl mx-auto"
 		>
 			<div className="space-y-6 sm:space-y-8">
-				<div className="inline-flex items-center gap-3 text-xs sm:text-sm text-zinc-300 group cursor-default">
-					<div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50" />
+				{/* Status indicator - hidden for now */}
+				{/* <div className="inline-flex items-center gap-3 text-xs sm:text-sm text-zinc-300 group cursor-default">
+					<div className={`w-2.5 h-2.5 rounded-full animate-pulse shadow-lg ${
+						currentStatus?.id === 'not-looking' 
+							? 'bg-red-400 shadow-red-400/50' 
+							: currentStatus?.id === 'looking-roles'
+							? 'bg-blue-400 shadow-blue-400/50'
+							: currentStatus?.id === 'freelance'
+							? 'bg-yellow-400 shadow-yellow-400/50'
+							: 'bg-green-400 shadow-green-400/50'
+					}`} />
 					<span className="group-hover:text-zinc-200 transition-colors duration-300 font-medium tracking-tight">
-						Available for opportunities
+						{currentStatus?.text || "Available for opportunities"}
 					</span>
-				</div>
+				</div> */}
 
 				{/* Professional Photo & Intro Section */}
 				<div className="flex flex-col sm:flex-row items-start gap-6 sm:gap-8">
@@ -43,7 +68,7 @@ export function Hero() {
 					</div>
 
 					{/* Professional Photo */}
-					<div className="flex-shrink-0">
+					<div className="flex-shrink-0 order-1 sm:order-2">
 						<div className="relative group">
 							<div className="w-32 h-32 sm:w-40 sm:h-40 rounded-lg overflow-hidden shadow-lg shadow-black/20 group-hover:shadow-xl group-hover:shadow-black/30 transition-all duration-300">
 								<img
