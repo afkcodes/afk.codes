@@ -2,6 +2,51 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ExternalLink } from "lucide-react";
 
 export const Route = createFileRoute("/uses")({
+	head: () => ({
+		meta: [
+			{
+				title: "Uses - Tools & Technologies | Ashish Kumar",
+			},
+			{
+				name: "description",
+				content:
+					"Complete list of tools, technologies, and gear I use as a Senior Frontend Engineer. Including development tools, hardware, browser extensions, and productivity apps.",
+			},
+			{
+				name: "keywords",
+				content:
+					"Developer Tools, Frontend Development Tools, VSCode, React Tools, TypeScript Tools, MacBook Pro, Development Setup, Programming Gear, Browser Extensions",
+			},
+			{
+				property: "og:title",
+				content: "Uses - Tools & Technologies | Ashish Kumar",
+			},
+			{
+				property: "og:description",
+				content:
+					"Discover the tools, technologies, and gear used by a Senior Frontend Engineer for React and TypeScript development.",
+			},
+			{
+				property: "og:url",
+				content: "https://afk.codes/uses",
+			},
+			{
+				name: "twitter:title",
+				content: "Developer Tools & Setup | Ashish Kumar",
+			},
+			{
+				name: "twitter:description",
+				content:
+					"Complete setup and tools used for React, TypeScript, and frontend development by a Senior Engineer.",
+			},
+		],
+		links: [
+			{
+				rel: "canonical",
+				href: "https://afk.codes/uses",
+			},
+		],
+	}),
 	component: RouteComponent,
 });
 

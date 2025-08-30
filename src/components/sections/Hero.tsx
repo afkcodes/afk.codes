@@ -3,7 +3,10 @@ import { skills } from "../../data/portfolio";
 
 export function Hero() {
 	return (
-		<section id="about" className="px-6 pt-16 pb-10 max-w-3xl xl:max-w-5xl 2xl:max-w-6xl mx-auto">
+		<section
+			id="about"
+			className="px-6 pt-16 pb-10 max-w-3xl xl:max-w-5xl 2xl:max-w-6xl mx-auto"
+		>
 			<div className="space-y-8">
 				<div className="inline-flex items-center gap-3 text-sm text-zinc-400 group cursor-default">
 					<div className="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse shadow-lg shadow-green-400/50" />
@@ -68,7 +71,8 @@ export function Hero() {
 						View My Work
 					</a>
 					<a
-						href="/resume.pdf"
+						href="/ashish_resume.pdf"
+						download="Ashish_Kumar_Resume.pdf"
 						className="inline-flex items-center gap-2 text-zinc-300 hover:text-white transition-all duration-300 px-4 py-2.5 rounded-lg hover:bg-zinc-900/50 font-medium tracking-tight font-['Geist'] text-sm"
 					>
 						Download CV

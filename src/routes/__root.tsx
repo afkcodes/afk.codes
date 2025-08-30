@@ -1,5 +1,6 @@
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
 import { ReactLenis } from "lenis/react";
+import { WebVitals } from "../components/WebVitals";
 
 import appCss from "../styles.css?url";
 
@@ -14,18 +15,171 @@ export const Route = createRootRoute({
 				content: "width=device-width, initial-scale=1",
 			},
 			{
-				title: "Ashish Kumar - Senior Frontend Engineer",
+				title:
+					"Ashish Kumar - Senior Frontend Engineer | React TypeScript Expert",
 			},
 			{
 				name: "description",
 				content:
-					"Senior Frontend Engineer specializing in React, TypeScript, and modern web technologies. Building scalable applications at Rakuten India.",
+					"Senior Frontend Engineer specializing in React, TypeScript, and modern web technologies. Building scalable design systems and applications. Expert in Next.js, TanStack, and component libraries.",
+			},
+			// Open Graph tags
+			{
+				property: "og:title",
+				content:
+					"Ashish Kumar - Senior Frontend Engineer | React TypeScript Expert",
+			},
+			{
+				property: "og:description",
+				content:
+					"Senior Frontend Engineer specializing in React, TypeScript, and modern web technologies. Building scalable design systems and applications.",
+			},
+			{
+				property: "og:type",
+				content: "website",
+			},
+			{
+				property: "og:url",
+				content: "https://afk.codes",
+			},
+			{
+				property: "og:image",
+				content:
+					"https://ik.imagekit.io/1uvbazlmc/IMG_8564-1.webp?tr=w-1200,h-630",
+			},
+			{
+				property: "og:image:width",
+				content: "1200",
+			},
+			{
+				property: "og:image:height",
+				content: "630",
+			},
+			{
+				property: "og:site_name",
+				content: "AFK Codes",
+			},
+			// Twitter Card tags
+			{
+				name: "twitter:card",
+				content: "summary_large_image",
+			},
+			{
+				name: "twitter:creator",
+				content: "@afkcodes",
+			},
+			{
+				name: "twitter:title",
+				content: "Ashish Kumar - Senior Frontend Engineer",
+			},
+			{
+				name: "twitter:description",
+				content:
+					"Senior Frontend Engineer specializing in React, TypeScript, and modern web technologies.",
+			},
+			{
+				name: "twitter:image",
+				content:
+					"https://ik.imagekit.io/1uvbazlmc/IMG_8564-1.webp?tr=w-1200,h-630",
+			},
+			// Additional SEO tags
+			{
+				name: "keywords",
+				content:
+					"Frontend Engineer, React Developer, TypeScript, JavaScript, Next.js, TanStack, Design Systems, Component Libraries, Web Development, Senior Engineer, Allica Bank, Rakuten",
+			},
+			{
+				name: "author",
+				content: "Ashish Kumar",
+			},
+			{
+				name: "robots",
+				content: "index, follow",
+			},
+			{
+				name: "googlebot",
+				content:
+					"index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1",
+			},
+			// Theme and mobile optimization
+			{
+				name: "theme-color",
+				content: "#000000",
+			},
+			{
+				name: "msapplication-TileColor",
+				content: "#000000",
+			},
+			{
+				name: "apple-mobile-web-app-capable",
+				content: "yes",
+			},
+			{
+				name: "apple-mobile-web-app-status-bar-style",
+				content: "black-translucent",
 			},
 		],
 		links: [
 			{
 				rel: "stylesheet",
 				href: appCss,
+			},
+			{
+				rel: "preconnect",
+				href: "https://fonts.googleapis.com",
+			},
+			{
+				rel: "preconnect",
+				href: "https://fonts.gstatic.com",
+				crossOrigin: "anonymous",
+			},
+			{
+				rel: "canonical",
+				href: "https://afk.codes",
+			},
+			{
+				rel: "icon",
+				type: "image/x-icon",
+				href: "/favicon.svg",
+			},
+			{
+				rel: "icon",
+				type: "image/png",
+				sizes: "32x32",
+				href: "/favicon.svgg",
+			},
+			{
+				rel: "icon",
+				type: "image/png",
+				sizes: "16x16",
+				href: "/favicon.svg",
+			},
+			{
+				rel: "apple-touch-icon",
+				sizes: "180x180",
+				href: "/favicon.svg",
+			},
+			{
+				rel: "dns-prefetch",
+				href: "https://github.com",
+			},
+			{
+				rel: "dns-prefetch",
+				href: "https://api.github.com",
+			},
+		],
+		scripts: [
+			{
+				src: "https://www.googletagmanager.com/gtag/js?id=G-00ZDLV4JQ0",
+				async: true,
+			},
+			{
+				children: `
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+					gtag('config', 'G-00ZDLV4JQ0');
+				`,
 			},
 		],
 	}),
@@ -34,7 +188,7 @@ export const Route = createRootRoute({
 
 	notFoundComponent: () => (
 		<div className="min-h-screen bg-black text-white font-['JetBrains_Mono'] flex items-center justify-center">
-			<div className="text-center space-y-6 max-w-md mx-auto px-6">
+			<div className="max-w-md px-6 mx-auto space-y-6 text-center">
 				<div className="space-y-2">
 					<h1 className="text-6xl font-bold text-zinc-300">404</h1>
 					<h2 className="text-xl font-medium text-zinc-200 tracking-tight font-['Geist']">
@@ -61,6 +215,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 		<html lang="en">
 			<head>
 				<HeadContent />
+				<link rel="preload" href={appCss} as="style" />
 			</head>
 			<body>
 				<ReactLenis
@@ -69,11 +224,14 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 						duration: 1.2,
 						autoRaf: true,
 						anchors: true,
+						smoothWheel: true,
+						syncTouch: true,
+						touchMultiplier: 2,
 					}}
 				>
 					{children}
 				</ReactLenis>
-
+				<WebVitals />
 				<Scripts />
 			</body>
 		</html>
