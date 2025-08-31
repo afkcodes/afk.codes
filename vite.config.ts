@@ -60,9 +60,6 @@ const config = defineConfig(({ mode }) => ({
             if (id.includes('lucide-react')) {
               return 'icons';
             }
-            if (id.includes('lenis')) {
-              return 'lenis';
-            }
             if (id.includes('web-vitals')) {
               return 'analytics';
             }

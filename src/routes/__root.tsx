@@ -1,7 +1,6 @@
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
 import { Partytown } from "@qwik.dev/partytown/react";
 import { lazy, Suspense } from "react";
-import { LazyLenis } from "../components/LazyLenis";
 
 import appCss from "../styles.css?url";
 
@@ -249,9 +248,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 				<link rel="preload" href={appCss} as="style" />
 			</head>
 			<body>
-				<LazyLenis>
-					{children}
-				</LazyLenis>
+				{children}
 				<Suspense fallback={null}>
 					<WebVitals />
 				</Suspense>
