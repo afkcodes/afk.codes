@@ -6,7 +6,7 @@
  */
 
 const RAMP = " ·:;=+*xX#%@";
-const ACCENT = "#ff5c1f";
+const ACCENT = "#fc4401";
 const PAPER = "#ededea";
 
 function makeNoise(seed: number) {
