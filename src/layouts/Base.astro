@@ -16,6 +16,7 @@ const {
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const gaId = import.meta.env.PUBLIC_GA_ID;
 const ogImage = new URL(profile.ogImage, Astro.site);
 const avatarUrl = new URL(profile.avatar, Astro.site);
 
@@ -101,6 +102,20 @@ const websiteSchema = {
 
 		<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 		<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+
+		{gaId && <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}></script>}
+		{
+			gaId && (
+				<script is:inline define:vars={{ gaId }}>
+					window.dataLayer = window.dataLayer || [];
+					function gtag() {
+						dataLayer.push(arguments);
+					}
+					gtag("js", new Date());
+					gtag("config", gaId);
+				</script>
+			)
+		}
 
 		<script is:inline>
 			document.documentElement.classList.add("js");
