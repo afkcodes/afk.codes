@@ -104,6 +104,18 @@ const websiteSchema = {
 
 		<script is:inline>
 			document.documentElement.classList.add("js");
+			// kill the legacy service worker + caches left behind by the previous site,
+			// otherwise returning visitors get served the old site cache-first forever
+			if ("serviceWorker" in navigator) {
+				navigator.serviceWorker.getRegistrations().then((regs) => {
+					for (const reg of regs) reg.unregister();
+				});
+			}
+			if (window.caches) {
+				caches.keys().then((keys) => {
+					for (const key of keys) caches.delete(key);
+				});
+			}
 		</script>
 	</head>
 	<body class="bg-ink text-paper min-h-svh">
