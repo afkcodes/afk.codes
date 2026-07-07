@@ -30,12 +30,12 @@ import { profile } from "../data/portfolio";
 				densities={[1, 1.5]}
 				loading="eager"
 				fetchpriority="high"
-				class="aspect-square w-full object-cover"
+				class="aspect-square w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
 			/>
 			<!-- scanlines -->
 			<div
 				aria-hidden="true"
-				class="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent_0_3px,rgba(10,10,11,0.22)_3px_4px)]"
+				class="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent_0_3px,rgba(10,10,11,0.22)_3px_4px)] transition-opacity duration-700 group-hover:opacity-0"
 			>
 			</div>
 		</div>
@@ -63,7 +63,7 @@ import { profile } from "../data/portfolio";
 				src={portrait}
 				alt={`Portrait of ${profile.name}`}
 				width={352}
-				class="aspect-square w-full object-cover"
+				class="aspect-square w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
 			/>
 			<span aria-hidden="true" class="absolute -top-1.5 -left-1.5 h-4 w-4 border-t-2 border-l-2 border-accent"></span>
 			<span aria-hidden="true" class="absolute -right-1.5 -bottom-1.5 h-4 w-4 border-r-2 border-b-2 border-accent"></span>
