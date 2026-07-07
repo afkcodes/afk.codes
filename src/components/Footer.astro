@@ -1,0 +1,18 @@
+---
+import { profile } from "../data/portfolio";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-line" aria-label="Footer">
+	<div
+		class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-5 py-8 font-mono text-xs text-muted sm:flex-row sm:px-8"
+	>
+		<p>© {year} {profile.name} — afk<span class="text-accent">.</span>codes</p>
+		<p>
+			built with <span class="text-paper">astro</span> · <span class="text-paper">tailwind</span> ·
+			<span class="text-paper">gsap</span>
+		</p>
+		<a href="#top" class="link-sweep text-paper" data-magnetic>back to top ↑</a>
+	</div>
+</footer>

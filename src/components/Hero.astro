@@ -1,0 +1,127 @@
+---
+import { Image } from "astro:assets";
+import portrait from "../assets/ashish.png";
+import { profile } from "../data/portfolio";
+
+const yearsShipping = new Date().getFullYear() - profile.startedYear;
+---
+
+<section
+	id="top"
+	class="relative flex min-h-svh flex-col justify-between overflow-hidden px-5 pt-28 pb-8 sm:px-8"
+	aria-label="Intro"
+>
+	<!-- living ascii field -->
+	<canvas
+		id="ascii-field"
+		class="pointer-events-none absolute inset-0 h-full w-full"
+		aria-hidden="true"
+	></canvas>
+
+	<!-- portrait panel — sits between the field and the type, desktop only -->
+	<figure
+		id="hero-portrait"
+		class="group pointer-events-auto absolute top-1/2 right-[4%] hidden w-[clamp(280px,26vw,400px)] -translate-y-[56%] lg:block"
+	>
+		<div id="hero-portrait-img" class="relative overflow-hidden">
+			<Image
+				src={portrait}
+				alt={`Portrait of ${profile.name}`}
+				width={800}
+				densities={[1, 1.5]}
+				loading="eager"
+				fetchpriority="high"
+				class="aspect-square w-full object-cover grayscale transition-[filter] duration-700 group-hover:grayscale-0"
+			/>
+			<!-- scanlines -->
+			<div
+				aria-hidden="true"
+				class="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent_0_3px,rgba(10,10,11,0.22)_3px_4px)]"
+			>
+			</div>
+			<!-- ink wash so it melts into the page -->
+			<div aria-hidden="true" class="pointer-events-none absolute inset-0 bg-ink/25 transition-opacity duration-700 group-hover:opacity-0"></div>
+		</div>
+		<!-- viewfinder brackets -->
+		<span aria-hidden="true" class="absolute -top-2 -left-2 h-6 w-6 border-t-2 border-l-2 border-accent"></span>
+		<span aria-hidden="true" class="absolute -top-2 -right-2 h-6 w-6 border-t-2 border-r-2 border-accent"></span>
+		<span aria-hidden="true" class="absolute -bottom-2 -left-2 h-6 w-6 border-b-2 border-l-2 border-accent"></span>
+		<span aria-hidden="true" class="absolute -right-2 -bottom-2 h-6 w-6 border-r-2 border-b-2 border-accent"></span>
+		<figcaption class="mt-4 flex items-center justify-between font-mono text-[0.65rem] tracking-widest text-muted uppercase">
+			<span>subject: ashish_kumar</span>
+			<span class="inline-flex items-center gap-2">
+				<span class="relative flex h-1.5 w-1.5">
+					<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60"></span>
+					<span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent"></span>
+				</span>
+				rec
+			</span>
+		</figcaption>
+	</figure>
+
+	<div class="relative mx-auto my-auto w-full max-w-7xl pb-10">
+		<!-- mobile portrait — small framed cut above the name -->
+		<div class="relative mb-8 w-36 sm:w-44 lg:hidden" data-reveal>
+			<Image
+				src={portrait}
+				alt={`Portrait of ${profile.name}`}
+				width={352}
+				class="aspect-square w-full object-cover grayscale"
+			/>
+			<span aria-hidden="true" class="absolute -top-1.5 -left-1.5 h-4 w-4 border-t-2 border-l-2 border-accent"></span>
+			<span aria-hidden="true" class="absolute -right-1.5 -bottom-1.5 h-4 w-4 border-r-2 border-b-2 border-accent"></span>
+		</div>
+
+		<h1 class="pointer-events-none relative font-display font-extrabold tracking-tight leading-[0.9] text-[clamp(2.75rem,12.5vw,11.5rem)] uppercase">
+			<span class="block" data-split>Ashish</span>
+			<span class="block text-accent" data-split>Kumar</span>
+		</h1>
+
+		<p class="relative mt-8 max-w-xl text-lg leading-relaxed text-muted sm:text-xl" data-reveal>
+			{profile.role} crafting
+			<span class="text-paper">design systems</span> &amp; component libraries at
+			<a href={profile.companyUrl} class="link-sweep text-paper" rel="noopener" target="_blank">{profile.company}</a>.
+			Making interfaces fast, accessible and a little bit fun since {profile.startedYear}.
+		</p>
+
+		<div class="relative mt-10 flex flex-wrap items-center gap-4" data-reveal>
+			<a
+				href="#contact"
+				class="group inline-flex items-center gap-3 rounded-full bg-accent px-7 py-3.5 font-mono text-sm font-semibold text-ink transition-transform hover:scale-[1.03]"
+				data-magnetic
+			>
+				let's talk
+				<span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+			</a>
+			<a
+				href="#projects"
+				class="inline-flex items-center gap-3 rounded-full border border-line px-7 py-3.5 font-mono text-sm text-paper transition-colors hover:border-accent hover:text-accent"
+				data-magnetic
+			>
+				view work
+			</a>
+		</div>
+	</div>
+
+	<div class="relative mx-auto flex w-full max-w-7xl items-end justify-between font-mono text-xs tracking-widest text-muted uppercase" data-reveal>
+		<span class="hidden sm:block">{profile.location}</span>
+		<span>{yearsShipping}+ yrs shipping frontend</span>
+		<span class="inline-flex items-center gap-2">
+			scroll
+			<span class="inline-block h-8 w-px overflow-hidden bg-line">
+				<span class="block h-3 w-px animate-[scrollhint_1.6s_ease-in-out_infinite] bg-accent"></span>
+			</span>
+		</span>
+	</div>
+</section>
+
+<style>
+	@keyframes scrollhint {
+		from {
+			transform: translateY(-100%);
+		}
+		to {
+			transform: translateY(300%);
+		}
+	}
+</style>

@@ -1,0 +1,44 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
+import Marquee from "../components/Marquee.astro";
+import About from "../components/About.astro";
+import Experience from "../components/Experience.astro";
+import Projects from "../components/Projects.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Base>
+	<div class="cursor-dot" aria-hidden="true"></div>
+	<div class="cursor-ring" aria-hidden="true"></div>
+
+	<!-- the site goes AFK when you do -->
+	<div id="screensaver" class="fixed inset-0 z-[95] hidden bg-ink" aria-hidden="true">
+		<div id="ss-bounce" class="absolute top-0 left-0 w-max select-none will-change-transform">
+			<p class="ss-mark font-display text-8xl font-extrabold tracking-tight uppercase">AFK</p>
+			<p class="mt-3 font-mono text-xs tracking-widest text-accent uppercase">
+				status: away_from_keyboard
+			</p>
+			<p class="mt-1 font-mono text-xs text-muted">
+				<span class="js-clock">--:--:--</span> IST — move to wake
+			</p>
+		</div>
+	</div>
+
+	<Nav />
+	<main>
+		<Hero />
+		<Marquee />
+		<About />
+		<Experience />
+		<Projects />
+		<Contact />
+	</main>
+	<Footer />
+
+	<script>
+		import "../scripts/main.ts";
+	</script>
+</Base>

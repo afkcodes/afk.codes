@@ -1,0 +1,112 @@
+---
+import "@fontsource-variable/syne";
+import "@fontsource-variable/space-grotesk";
+import "@fontsource-variable/jetbrains-mono";
+import "../styles/global.css";
+import { profile } from "../data/portfolio";
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = `${profile.name} — ${profile.role}, ${profile.specialty}`,
+	description = profile.tagline,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL(profile.ogImage, Astro.site);
+const avatarUrl = new URL(profile.avatar, Astro.site);
+
+const personSchema = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	name: profile.name,
+	alternateName: profile.alias,
+	url: Astro.site?.toString(),
+	image: avatarUrl.toString(),
+	jobTitle: `${profile.role} — ${profile.specialty}`,
+	worksFor: {
+		"@type": "Organization",
+		name: profile.company,
+		url: profile.companyUrl,
+	},
+	address: {
+		"@type": "PostalAddress",
+		addressLocality: "Bokaro",
+		addressRegion: "Jharkhand",
+		addressCountry: "IN",
+	},
+	email: `mailto:${profile.email}`,
+	sameAs: [profile.social.github, profile.social.linkedin],
+	knowsAbout: [
+		"Design Systems",
+		"React",
+		"TypeScript",
+		"Frontend Architecture",
+		"Component Libraries",
+		"Web Performance",
+	],
+};
+
+const websiteSchema = {
+	"@context": "https://schema.org",
+	"@type": "WebSite",
+	name: "afk.codes",
+	url: Astro.site?.toString(),
+	author: { "@type": "Person", name: profile.name },
+	description,
+};
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="author" content={profile.name} />
+		<meta
+			name="keywords"
+			content="Ashish Kumar, afkcodes, frontend engineer, design systems, React, TypeScript, component libraries, portfolio, India"
+		/>
+		<link rel="canonical" href={canonical} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+		<meta name="theme-color" content="#0a0a0b" />
+		<meta name="color-scheme" content="dark" />
+		<meta name="robots" content="index, follow, max-image-preview:large" />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="afk.codes" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content={`Portrait of ${profile.name}`} />
+		<meta property="og:locale" content="en_US" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+
+		<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+		<script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+
+		<script is:inline>
+			document.documentElement.classList.add("js");
+		</script>
+	</head>
+	<body class="bg-ink text-paper min-h-svh">
+		<slot />
+	</body>
+</html>

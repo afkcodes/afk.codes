@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@theme {
+	--color-ink: #0a0a0b;
+	--color-ink-2: #111113;
+	--color-ink-3: #1a1a1d;
+	--color-paper: #ededea;
+	--color-muted: #8b8b90;
+	--color-line: #232326;
+	--color-accent: #ff5c1f;
+	--color-accent-dim: #d14a15;
+
+	--font-display: "Syne Variable", ui-sans-serif, system-ui, sans-serif;
+	--font-sans: "Space Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+	--font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+
+	--animate-marquee: marquee 28s linear infinite;
+	--animate-blink: blink 1.1s step-end infinite;
+
+	@keyframes marquee {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-50%);
+		}
+	}
+
+	@keyframes blink {
+		50% {
+			opacity: 0;
+		}
+	}
+}
+
+html {
+	background: var(--color-ink);
+	color: var(--color-paper);
+	scrollbar-color: var(--color-ink-3) var(--color-ink);
+}
+
+body {
+	font-family: var(--font-sans);
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	overflow-x: clip;
+}
+
+::selection {
+	background: var(--color-accent);
+	color: var(--color-ink);
+}
+
+/* Lenis recommendations */
+html.lenis,
+html.lenis body {
+	height: auto;
+}
+.lenis.lenis-smooth {
+	scroll-behavior: auto !important;
+}
+
+/* Reveal primitives — animated by GSAP, visible by default when JS/motion is off */
+@media (prefers-reduced-motion: no-preference) {
+	.js [data-reveal] {
+		opacity: 0;
+		transform: translateY(2.5rem);
+	}
+	.js #hero-portrait {
+		opacity: 0;
+	}
+	.js #hero-portrait-img {
+		clip-path: inset(100% 0 0 0);
+	}
+	.js [data-reveal-line] > .line-inner {
+		transform: translateY(110%);
+	}
+	.js [data-char] {
+		opacity: 0;
+		transform: translateY(60%) rotate(4deg);
+	}
+}
+
+[data-reveal-line] {
+	overflow: hidden;
+}
+[data-reveal-line] > .line-inner {
+	display: block;
+	will-change: transform;
+}
+
+/* Outlined ghost display text */
+.text-outline {
+	-webkit-text-stroke: 1px color-mix(in oklab, var(--color-paper) 14%, transparent);
+	color: transparent;
+}
+
+/* AFK screensaver */
+#screensaver {
+	cursor: none;
+}
+#screensaver .ss-mark {
+	-webkit-text-stroke: 2px var(--color-accent);
+	color: transparent;
+	transition: -webkit-text-stroke-color 0.15s;
+}
+#screensaver.ss-alt .ss-mark {
+	-webkit-text-stroke-color: var(--color-paper);
+}
+
+/* Custom cursor — only on precise pointers */
+.cursor-dot,
+.cursor-ring {
+	display: none;
+}
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+	.cursor-dot,
+	.cursor-ring {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 100;
+		pointer-events: none;
+		border-radius: 9999px;
+		will-change: transform;
+	}
+	.cursor-dot {
+		width: 8px;
+		height: 8px;
+		background: var(--color-accent);
+	}
+	.cursor-ring {
+		width: 36px;
+		height: 36px;
+		border: 1px solid color-mix(in oklab, var(--color-accent) 55%, transparent);
+		transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease;
+	}
+	.cursor-ring.is-hovering {
+		width: 56px;
+		height: 56px;
+		border-color: var(--color-accent);
+	}
+}
+
+/* Marquee */
+.marquee-track {
+	display: flex;
+	width: max-content;
+	animation: var(--animate-marquee);
+}
+.marquee:hover .marquee-track {
+	animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+	.marquee-track {
+		animation: none;
+	}
+}
+
+/* Underline sweep for inline links */
+.link-sweep {
+	background-image: linear-gradient(var(--color-accent), var(--color-accent));
+	background-size: 0% 1px;
+	background-position: 0 100%;
+	background-repeat: no-repeat;
+	transition: background-size 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-sweep:hover {
+	background-size: 100% 1px;
+}
+
+/* Big contact CTA fill effect */
+.cta-giant {
+	-webkit-text-stroke: 1.5px var(--color-paper);
+	color: transparent;
+	transition: color 0.4s cubic-bezier(0.22, 1, 0.36, 1), -webkit-text-stroke-color 0.4s;
+}
+.cta-giant:hover {
+	color: var(--color-accent);
+	-webkit-text-stroke-color: var(--color-accent);
+}

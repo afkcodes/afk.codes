@@ -1,12 +1,6 @@
 node_modules
 .DS_Store
 dist
-dist-ssr
+.astro
 *.local
-count.txt
 .env
-.nitro
-.tanstack
-.output
-.vinxi
-todos.json

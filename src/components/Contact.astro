@@ -1,0 +1,44 @@
+---
+import { profile } from "../data/portfolio";
+---
+
+<section id="contact" class="relative overflow-hidden border-t border-line py-28 sm:py-40" aria-label="Contact">
+	<div class="mx-auto max-w-7xl px-5 sm:px-8">
+		<div class="mb-10 flex items-baseline gap-6" data-reveal>
+			<span class="font-mono text-xs tracking-widest text-accent">04</span>
+			<p class="font-mono text-xs tracking-widest text-muted uppercase">
+				available for interesting problems
+			</p>
+		</div>
+
+		<a
+			href={`mailto:${profile.email}`}
+			class="cta-giant block font-display text-[clamp(3rem,12vw,10.5rem)] leading-[0.95] font-extrabold tracking-tight uppercase"
+			data-reveal
+		>
+			Say hello<span aria-hidden="true"> ↗</span>
+		</a>
+
+		<div class="mt-16 grid gap-10 sm:grid-cols-3" data-reveal>
+			<div>
+				<p class="font-mono text-xs tracking-widest text-muted uppercase">email</p>
+				<a href={`mailto:${profile.email}`} class="link-sweep mt-2 inline-block break-all text-paper">
+					{profile.email}
+				</a>
+			</div>
+			<div>
+				<p class="font-mono text-xs tracking-widest text-muted uppercase">elsewhere</p>
+				<div class="mt-2 flex gap-6">
+					<a href={profile.social.github} target="_blank" rel="noopener me" class="link-sweep text-paper">github</a>
+					<a href={profile.social.linkedin} target="_blank" rel="noopener me" class="link-sweep text-paper">linkedin</a>
+				</div>
+			</div>
+			<div>
+				<p class="font-mono text-xs tracking-widest text-muted uppercase">resume</p>
+				<a href={profile.resume} download="Ashish_Kumar_Resume.pdf" class="link-sweep mt-2 inline-block text-paper">
+					download pdf ↓
+				</a>
+			</div>
+		</div>
+	</div>
+</section>

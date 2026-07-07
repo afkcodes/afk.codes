@@ -1,0 +1,42 @@
+---
+import { experiences } from "../data/portfolio";
+---
+
+<section id="experience" class="mx-auto max-w-7xl px-5 py-28 sm:px-8 sm:py-36" aria-label="Experience">
+	<div class="mb-14 flex items-baseline gap-6" data-reveal>
+		<span class="font-mono text-xs tracking-widest text-accent">02</span>
+		<h2 class="font-display text-4xl font-bold tracking-tight uppercase sm:text-6xl">Experience</h2>
+		<span class="h-px flex-1 bg-line"></span>
+	</div>
+
+	<ol class="border-t border-line">
+		{
+			experiences.map((exp) => (
+				<li
+					class="group grid gap-4 border-b border-line py-10 transition-colors duration-300 hover:bg-ink-2/60 sm:grid-cols-[10rem_1fr] sm:gap-10 sm:px-4"
+					data-reveal
+				>
+					<div class="font-mono text-sm text-muted">
+						<span class="text-paper">{exp.from}</span>
+						<span class="mx-1 text-accent">—</span>
+						<span class:list={[exp.to === "NOW" && "text-accent"]}>{exp.to}</span>
+					</div>
+					<div>
+						<h3 class="font-display text-2xl font-bold tracking-tight text-paper sm:text-3xl">
+							{exp.role}
+						</h3>
+						<p class="mt-1 font-mono text-sm tracking-wide text-accent">@ {exp.company}</p>
+						<p class="mt-4 max-w-2xl leading-relaxed text-muted">{exp.description}</p>
+						<ul class="mt-5 flex flex-wrap gap-2" aria-label="Technologies used">
+							{exp.tech.map((tech) => (
+								<li class="rounded-full border border-line px-3 py-1 font-mono text-xs text-muted transition-colors group-hover:border-paper/20 group-hover:text-paper/80">
+									{tech}
+								</li>
+							))}
+						</ul>
+					</div>
+				</li>
+			))
+		}
+	</ol>
+</section>

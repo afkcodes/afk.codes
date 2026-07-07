@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import portrait from "../assets/ashish.png";
+import { profile, stats } from "../data/portfolio";
+---
+
+<section id="about" class="relative mx-auto max-w-7xl px-5 py-28 sm:px-8 sm:py-36" aria-label="About">
+	<div class="mb-14 flex items-baseline gap-6" data-reveal>
+		<span class="font-mono text-xs tracking-widest text-accent">01</span>
+		<h2 class="font-display text-4xl font-bold tracking-tight uppercase sm:text-6xl">About</h2>
+		<span class="h-px flex-1 bg-line"></span>
+	</div>
+
+	<div class="grid gap-14 lg:grid-cols-[1.4fr_1fr] lg:gap-20">
+		<div class="space-y-6 text-lg leading-relaxed text-muted sm:text-xl">
+			{profile.bio.map((para) => <p data-reveal>{para}</p>)}
+
+			<p data-reveal class="font-mono text-sm text-muted">
+				<span class="text-accent">$</span> currently:
+				<span class="text-paper">design systems @ {profile.company}</span>
+				<span class="animate-blink text-accent">▊</span>
+			</p>
+		</div>
+
+		<div class="space-y-10">
+			<div class="group relative w-fit" data-reveal>
+				<div class="absolute -inset-2 rounded-2xl border border-line transition-transform duration-500 group-hover:rotate-2"></div>
+				<Image
+					src={portrait}
+					alt={`Portrait of ${profile.name}`}
+					width={640}
+					loading="lazy"
+					class="relative aspect-square w-64 rounded-xl object-cover grayscale transition-all duration-500 group-hover:grayscale-0 sm:w-80"
+				/>
+				<span class="absolute -right-3 -bottom-3 rounded-full bg-accent px-3 py-1 font-mono text-xs font-semibold text-ink">
+					home cook · music buff
+				</span>
+			</div>
+
+			<dl class="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line">
+				{
+					stats.map((stat) => (
+						<div class="bg-ink-2 p-5" data-reveal>
+							<dd class="font-display text-4xl font-bold text-paper">
+								<span data-count={stat.value}>{stat.value}</span><span class="text-accent">{stat.suffix}</span>
+							</dd>
+							<dt class="mt-1 font-mono text-xs tracking-widest text-muted uppercase">{stat.label}</dt>
+						</div>
+					))
+				}
+			</dl>
+		</div>
+	</div>
+</section>
