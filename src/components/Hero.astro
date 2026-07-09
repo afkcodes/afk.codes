@@ -17,36 +17,37 @@ import { profile } from "../data/portfolio";
 		aria-hidden="true"
 	></canvas>
 
-	<!-- portrait panel — sits between the field and the type, desktop only -->
-	<figure
-		id="hero-portrait"
-		class="group pointer-events-auto absolute top-1/2 right-[4%] hidden w-[clamp(280px,26vw,400px)] -translate-y-[56%] lg:block"
-	>
-		<div id="hero-portrait-img" class="relative overflow-hidden">
-			<Image
-				src={portrait}
-				alt={`Portrait of ${profile.name}`}
-				width={800}
-				densities={[1, 1.5]}
-				loading="eager"
-				fetchpriority="high"
-				class="aspect-square w-full object-cover grayscale transition-[filter,scale] duration-700 ease-out group-hover:scale-[1.05] group-hover:grayscale-0"
-			/>
-			<!-- scanlines -->
-			<div
-				aria-hidden="true"
-				class="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent_0_3px,rgba(10,10,11,0.22)_3px_4px)] transition-opacity duration-700 group-hover:opacity-0"
-			>
-			</div>
-		</div>
-		<!-- viewfinder brackets -->
-		<span aria-hidden="true" class="absolute -top-2 -left-2 h-6 w-6 border-t-2 border-l-2 border-accent"></span>
-		<span aria-hidden="true" class="absolute -top-2 -right-2 h-6 w-6 border-t-2 border-r-2 border-accent"></span>
-		<span aria-hidden="true" class="absolute -bottom-2 -left-2 h-6 w-6 border-b-2 border-l-2 border-accent"></span>
-		<span aria-hidden="true" class="absolute -right-2 -bottom-2 h-6 w-6 border-r-2 border-b-2 border-accent"></span>
-	</figure>
 
-	<div class="relative mx-auto my-auto w-full max-w-7xl pb-10">
+	<div class="relative mx-auto my-auto w-full max-w-7xl">
+		<!-- portrait panel — sits between the field and the type, desktop only -->
+		<figure
+			id="hero-portrait"
+			class="group pointer-events-auto absolute -top-16 right-0 hidden w-[clamp(280px,24vw,380px)] lg:block"
+		>
+			<div id="hero-portrait-img" class="relative overflow-hidden">
+				<Image
+					src={portrait}
+					alt={`Portrait of ${profile.name}`}
+					width={800}
+					densities={[1, 1.5]}
+					loading="eager"
+					fetchpriority="high"
+					class="aspect-square w-full object-cover grayscale transition-[filter,scale] duration-700 ease-out group-hover:scale-[1.05] group-hover:grayscale-0"
+				/>
+				<!-- scanlines -->
+				<div
+					aria-hidden="true"
+					class="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent_0_3px,rgba(10,10,11,0.22)_3px_4px)] transition-opacity duration-700 group-hover:opacity-0"
+				>
+				</div>
+			</div>
+			<!-- viewfinder brackets -->
+			<span aria-hidden="true" class="absolute -top-2 -left-2 h-6 w-6 border-t-2 border-l-2 border-accent"></span>
+			<span aria-hidden="true" class="absolute -top-2 -right-2 h-6 w-6 border-t-2 border-r-2 border-accent"></span>
+			<span aria-hidden="true" class="absolute -bottom-2 -left-2 h-6 w-6 border-b-2 border-l-2 border-accent"></span>
+			<span aria-hidden="true" class="absolute -right-2 -bottom-2 h-6 w-6 border-r-2 border-b-2 border-accent"></span>
+		</figure>
+
 		<!-- mobile portrait — small framed cut above the name -->
 		<div class="relative mb-8 w-36 sm:w-44 lg:hidden" data-reveal>
 			<Image
@@ -59,7 +60,7 @@ import { profile } from "../data/portfolio";
 			<span aria-hidden="true" class="absolute -right-1.5 -bottom-1.5 h-4 w-4 border-r-2 border-b-2 border-accent"></span>
 		</div>
 
-		<h1 class="pointer-events-none relative font-display font-extrabold tracking-tight leading-[0.9] text-[clamp(2.75rem,12.5vw,11.5rem)] uppercase">
+		<h1 class="pointer-events-none relative font-display font-extrabold tracking-tight leading-[0.9] text-[clamp(2.75rem,12.5vw,10.5rem)] uppercase">
 			<span class="block" data-split>Ashish</span>
 			<span class="block text-accent" data-split>Kumar</span>
 		</h1>
