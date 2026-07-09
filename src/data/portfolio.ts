@@ -167,8 +167,8 @@ export const skills: string[] = [
 ];
 
 export const stats = [
-	{ value: 7, suffix: "+", label: "years_shipping" },
+	{ value: 7, suffix: "+", label: "years shipping" },
 	{ value: 4, suffix: "", label: "companies" },
-	{ value: 250, suffix: "+", label: "github_stars" },
-	{ value: 100, suffix: "%", label: "ds_adoption_at_allica" },
+	{ value: 250, suffix: "+", label: "github stars" },
+	{ value: 100, suffix: "%", label: "design system adoption" },
 ];

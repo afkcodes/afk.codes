@@ -22,7 +22,7 @@ import { profile, stats } from "../data/portfolio";
 			</p>
 		</div>
 
-		<div class="space-y-10">
+		<div>
 			<div class="group relative w-fit" data-reveal>
 				<div class="absolute -inset-2 rounded-2xl border border-line transition-transform duration-500 group-hover:rotate-2"></div>
 				<Image
@@ -37,30 +37,19 @@ import { profile, stats } from "../data/portfolio";
 				</span>
 			</div>
 
-			<div class="rounded-xl border border-line bg-ink-2 p-6 font-mono text-sm" data-reveal>
-				<p class="mb-5 flex items-center justify-between text-xs tracking-widest text-muted uppercase">
-					<span>// stats</span>
-					<span class="flex gap-1.5" aria-hidden="true">
-						<span class="h-2 w-2 rounded-full bg-line"></span>
-						<span class="h-2 w-2 rounded-full bg-line"></span>
-						<span class="h-2 w-2 rounded-full bg-accent"></span>
-					</span>
-				</p>
-				<dl class="space-y-3.5">
-					{
-						stats.map((stat) => (
-							<div class="flex items-baseline justify-between gap-6">
-								<dt class="text-muted">
-									<span class="text-accent">$</span> {stat.label}
-								</dt>
-								<dd class="font-semibold text-paper">
-									<span data-count={stat.value}>{stat.value}</span><span class="text-accent">{stat.suffix}</span>
-								</dd>
-							</div>
-						))
-					}
-				</dl>
-			</div>
 		</div>
 	</div>
+
+	<dl class="mt-24 grid grid-cols-2 gap-y-10 border-y border-line py-10 sm:grid-cols-4 sm:gap-y-0" data-reveal>
+		{
+			stats.map((stat, i) => (
+				<div class:list={["px-2 sm:px-8", i > 0 && "sm:border-l sm:border-line"]}>
+					<dd class="font-display text-4xl font-bold whitespace-nowrap text-paper sm:text-5xl">
+						<span data-count={stat.value}>{stat.value}</span><span class="text-accent">{stat.suffix}</span>
+					</dd>
+					<dt class="mt-2 font-mono text-xs tracking-widest text-muted uppercase">{stat.label}</dt>
+				</div>
+			))
+		}
+	</dl>
 </section>
