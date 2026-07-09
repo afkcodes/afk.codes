@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 import portrait from "../assets/ashish.png";
 import { profile } from "../data/portfolio";
-
 ---
 
 <section
@@ -17,18 +16,61 @@ import { profile } from "../data/portfolio";
 		aria-hidden="true"
 	></canvas>
 
+	<div class="relative mx-auto my-auto grid w-full max-w-7xl items-center gap-x-16 lg:grid-cols-[1fr_auto]">
+		<div>
+			<!-- mobile portrait — small framed cut above the name -->
+			<div class="relative mb-8 w-36 sm:w-44 lg:hidden" data-reveal>
+				<Image
+					src={portrait}
+					alt={`Portrait of ${profile.name}`}
+					width={352}
+					class="aspect-square w-full object-cover grayscale transition-[filter,scale] duration-700 ease-out group-hover:scale-[1.05] group-hover:grayscale-0"
+				/>
+				<span aria-hidden="true" class="absolute -top-1.5 -left-1.5 h-4 w-4 border-t-2 border-l-2 border-accent"></span>
+				<span aria-hidden="true" class="absolute -right-1.5 -bottom-1.5 h-4 w-4 border-r-2 border-b-2 border-accent"></span>
+			</div>
 
-	<div class="relative mx-auto my-auto w-full max-w-7xl">
-		<!-- portrait panel — sits between the field and the type, desktop only -->
+			<h1 class="relative font-display font-extrabold tracking-tight leading-[0.9] text-[clamp(2.75rem,12.5vw,10.5rem)] uppercase lg:text-[clamp(2.75rem,8vw,7.5rem)]">
+				<span class="block" data-split>Ashish</span>
+				<span class="block text-accent" data-split>Kumar</span>
+			</h1>
+
+			<p class="relative mt-8 max-w-xl text-lg leading-relaxed text-muted sm:text-xl" data-reveal>
+				{profile.role} crafting
+				<span class="text-paper">design systems</span> &amp; component libraries at
+				<a href={profile.companyUrl} class="link-sweep text-paper" rel="noopener" target="_blank">{profile.company}</a>.
+				Making interfaces fast, accessible and a little bit fun since {profile.startedYear}.
+			</p>
+
+			<div class="relative mt-10 flex flex-wrap items-center gap-4" data-reveal>
+				<a
+					href="#contact"
+					class="group inline-flex items-center gap-3 rounded-full bg-paper px-7 py-3.5 font-mono text-sm font-semibold text-ink transition-[scale,background-color] duration-300 hover:scale-[1.03] hover:bg-accent hover:text-ink"
+					data-magnetic
+				>
+					let's talk
+					<span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+				</a>
+				<a
+					href="#projects"
+					class="inline-flex items-center gap-3 rounded-full border border-line px-7 py-3.5 font-mono text-sm text-paper transition-colors hover:border-accent hover:text-accent"
+					data-magnetic
+				>
+					view work
+				</a>
+			</div>
+		</div>
+
+		<!-- portrait panel — its own column, never under the type -->
 		<figure
 			id="hero-portrait"
-			class="group pointer-events-auto absolute -top-16 right-0 hidden w-[clamp(280px,24vw,380px)] lg:block"
+			class="group pointer-events-auto relative hidden w-[clamp(280px,26vw,400px)] lg:block"
 		>
 			<div id="hero-portrait-img" class="relative overflow-hidden">
 				<Image
 					src={portrait}
 					alt={`Portrait of ${profile.name}`}
-					width={800}
+					width={840}
 					densities={[1, 1.5]}
 					loading="eager"
 					fetchpriority="high"
@@ -47,48 +89,5 @@ import { profile } from "../data/portfolio";
 			<span aria-hidden="true" class="absolute -bottom-2 -left-2 h-6 w-6 border-b-2 border-l-2 border-accent"></span>
 			<span aria-hidden="true" class="absolute -right-2 -bottom-2 h-6 w-6 border-r-2 border-b-2 border-accent"></span>
 		</figure>
-
-		<!-- mobile portrait — small framed cut above the name -->
-		<div class="relative mb-8 w-36 sm:w-44 lg:hidden" data-reveal>
-			<Image
-				src={portrait}
-				alt={`Portrait of ${profile.name}`}
-				width={352}
-				class="aspect-square w-full object-cover grayscale transition-[filter,scale] duration-700 ease-out group-hover:scale-[1.05] group-hover:grayscale-0"
-			/>
-			<span aria-hidden="true" class="absolute -top-1.5 -left-1.5 h-4 w-4 border-t-2 border-l-2 border-accent"></span>
-			<span aria-hidden="true" class="absolute -right-1.5 -bottom-1.5 h-4 w-4 border-r-2 border-b-2 border-accent"></span>
-		</div>
-
-		<h1 class="pointer-events-none relative font-display font-extrabold tracking-tight leading-[0.9] text-[clamp(2.75rem,12.5vw,10.5rem)] uppercase">
-			<span class="block" data-split>Ashish</span>
-			<span class="block text-accent" data-split>Kumar</span>
-		</h1>
-
-		<p class="relative mt-8 max-w-xl text-lg leading-relaxed text-muted sm:text-xl" data-reveal>
-			{profile.role} crafting
-			<span class="text-paper">design systems</span> &amp; component libraries at
-			<a href={profile.companyUrl} class="link-sweep text-paper" rel="noopener" target="_blank">{profile.company}</a>.
-			Making interfaces fast, accessible and a little bit fun since {profile.startedYear}.
-		</p>
-
-		<div class="relative mt-10 flex flex-wrap items-center gap-4" data-reveal>
-			<a
-				href="#contact"
-				class="group inline-flex items-center gap-3 rounded-full bg-paper px-7 py-3.5 font-mono text-sm font-semibold text-ink transition-[scale,background-color] duration-300 hover:scale-[1.03] hover:bg-accent hover:text-ink"
-				data-magnetic
-			>
-				let's talk
-				<span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
-			</a>
-			<a
-				href="#projects"
-				class="inline-flex items-center gap-3 rounded-full border border-line px-7 py-3.5 font-mono text-sm text-paper transition-colors hover:border-accent hover:text-accent"
-				data-magnetic
-			>
-				view work
-			</a>
-		</div>
 	</div>
-
 </section>
