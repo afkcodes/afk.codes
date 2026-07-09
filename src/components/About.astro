@@ -37,14 +37,17 @@ import { profile, stats } from "../data/portfolio";
 				</span>
 			</div>
 
-			<dl class="grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-line">
+			<dl class="border-t border-line">
 				{
 					stats.map((stat) => (
-						<div class="bg-ink-2 p-5" data-reveal>
-							<dd class="font-display text-4xl font-bold text-paper">
+						<div
+							class="flex items-baseline justify-between gap-6 border-b border-line py-5"
+							data-reveal
+						>
+							<dt class="font-mono text-xs tracking-widest text-muted uppercase">{stat.label}</dt>
+							<dd class="font-display text-4xl font-bold whitespace-nowrap text-paper">
 								<span data-count={stat.value}>{stat.value}</span><span class="text-accent">{stat.suffix}</span>
 							</dd>
-							<dt class="mt-1 font-mono text-xs tracking-widest text-muted uppercase">{stat.label}</dt>
 						</div>
 					))
 				}
